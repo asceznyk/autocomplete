@@ -18,17 +18,11 @@ function App() {
         >
           OK this looks good (locally!)
         </a>
-        <!--<div>
+        /*<div>
           <Alert variant="standard" color="info">
             Check out this alert!
           </Alert>
-          <Alert variant="outlined" color="info">
-            Check out this alert!
-          </Alert>
-          <Alert variant="filled" color="info">
-            Check out this alert!
-          </Alert>
-        </div>-->
+        </div>*/
       </header>
     </div>
   );
