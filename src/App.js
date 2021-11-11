@@ -1,6 +1,6 @@
 import logo from './logo.svg';
 import './App.css';
-import { Alert } from '@mui/material'
+import { Alert, Button } from '@mui/material'
 
 function App() {
   return (
@@ -19,6 +19,7 @@ function App() {
           OK this looks good (locally!)
         </a>
         <Alert variant="standard" color="info">Check out this alert!</Alert>
+        <Button variant="text" startIcon={<ShoppingCartRounded />}>Add to Cart</Button>
       </header>
     </div>
   );
