@@ -1,6 +1,6 @@
 import logo from './logo.svg';
 import './App.css';
-import { Alert } from '@mui/material'
+//import { Alert } from '@mui/material'
 
 function App() {
   return (
@@ -18,7 +18,7 @@ function App() {
         >
           OK this looks good (locally!)
         </a>
-        <div>
+        <!--<div>
           <Alert variant="standard" color="info">
             Check out this alert!
           </Alert>
@@ -28,7 +28,7 @@ function App() {
           <Alert variant="filled" color="info">
             Check out this alert!
           </Alert>
-        </div>
+        </div>-->
       </header>
     </div>
   );
