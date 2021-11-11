@@ -17,7 +17,8 @@ function App() {
           rel="noopener noreferrer"
         >
           OK this looks good (locally!)
-        </a> 
+        </a>
+        <Alert variant="standard" color="info">Check out this alert!</Alert>
       </header>
     </div>
   );
