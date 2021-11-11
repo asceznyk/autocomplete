@@ -1,6 +1,7 @@
 import logo from './logo.svg';
 import './App.css';
-import { Alert, Button, ShoppingCartRounded } from '@mui/material'
+import { Alert, Button } from '@mui/material'
+import { ShoppingCartRounded } from '@material-ui/icons/'
 
 function App() {
   return (
