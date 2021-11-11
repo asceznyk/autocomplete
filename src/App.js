@@ -17,7 +17,7 @@ function App() {
           target="_blank"
           rel="noopener noreferrer"
         >
-          OK this looks good (locally!)
+        this sucks!
         </a>
         <Alert variant="standard" color="info">Check out this alert!</Alert>
         <Button variant="text" startIcon={<ShoppingCartRounded />}>Add to Cart</Button>
