@@ -1,5 +1,6 @@
 import logo from './logo.svg';
 import './App.css';
+import { Alert } from '@mui/material'
 
 function App() {
   return (
@@ -17,6 +18,17 @@ function App() {
         >
           OK this looks good (locally!)
         </a>
+        <div>
+          <Alert variant="standard" color="info">
+            Check out this alert!
+          </Alert>
+          <Alert variant="outlined" color="info">
+            Check out this alert!
+          </Alert>
+          <Alert variant="filled" color="info">
+            Check out this alert!
+          </Alert>
+        </div>
       </header>
     </div>
   );
