@@ -31,6 +31,7 @@ function Header() {
 
 function App() {
   return (
+    <Helmet><title>{ Title }</title></Helmet>
     <div className="App">
       <Grid container spacing={2}>
         <Grid item xs={12}><Header/></Grid>
