@@ -24,7 +24,7 @@ function Header() {
     <Box sx={{ flexGrow: 1 }}>
       <AppBar position="static">
       <Toolbar>
-        <Typography variant="h6" component="div" sx={{ flexGrow: 1 }}>SimpleAJAX</Typography>
+        <Typography variant="h6" component="div" sx={{ flexGrow: 1 }}>SimpleAutoComplete</Typography>
       </Toolbar>
       </AppBar>
     </Box>
@@ -35,16 +35,15 @@ function App() {
   return (
     <div className="App">
       <Grid container spacing={2}>
-        <Grid item xs={12} md={12}><Header/></Grid>
-        <Grid item xs={12} md={12}>
+        <Grid item xs={12}}><Header/></Grid>
+        <Grid item xs={12}>
           <FormControl>
-          <InputLabel htmlFor="user-input">Email address</InputLabel>
+          <InputLabel htmlFor="user-input">Type any movie..</InputLabel>
           <Input id="user-input" aria-describedby="helper-text" />
-          <FormHelperText id="helper-text">We'll never share your email.</FormHelperText> 
           </FormControl>
         </Grid>
-        <Grid item xs={12} md={12}>
-          <Button variant="outlined" id="user-email">Give my email</Button>
+        <Grid item xs={12}>
+          <Button variant="outlined" id="search-movie">Search</Button>
         </Grid>
       </Grid>
     </div>
