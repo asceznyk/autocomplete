@@ -19,12 +19,12 @@ import {
 
 import './App.css';
 
-function AppBar() {
+function Header() {
   return (
     <Box sx={{ flexGrow: 1 }}>
       <AppBar position="static">
       <Toolbar>
-      <Typography variant="h6" component="div" sx={{ flexGrow: 1 }}>SimpleAJAX</Typography>
+      <Typography variant="h6" component="div" sx={{ flexGrow: 1 }}SimpleAJAX</Typography>
       </Toolbar>
       </AppBar>
     </Box>
@@ -35,7 +35,7 @@ function App() {
   return (
     <div className="App">
       <Grid container spacing={2}>
-        <Grid item><AppBar/></Grid>
+        <Grid item><Header/></Grid>
         <Grid item>
           <FormControl>
           <InputLabel htmlFor="user-input">Email address</InputLabel>
