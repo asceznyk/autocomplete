@@ -7,8 +7,6 @@ import './index.css';
 import App, {Title} from './App';
 import reportWebVitals from './reportWebVitals';
 
-//const Title = 'SimpleAutoComplete';
-
 class TitleBar extends React.PureComponent {
   render() {
     return (
