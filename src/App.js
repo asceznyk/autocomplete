@@ -1,30 +1,28 @@
 import React from 'react';
-
-import { ShoppingCartRounded } from '@material-ui/icons/';
-//import MenuIcon from '@mui/icons-material/Menu';
+import { Helmet } from 'react-helmet';
 
 import {  
   Button, 
   FormControl, 
-  FormHelperText, 
   InputLabel, 
   Input,
   AppBar,
   Box, 
   Toolbar,
   Typography,
-  IconButton,
   Grid
 } from '@mui/material';
 
 import './App.css';
+
+const Title = 'SimpleAutoComplete';
 
 function Header() {
   return (
     <Box sx={{ flexGrow: 1 }}>
       <AppBar position="static">
       <Toolbar>
-        <Typography variant="h6" component="div" sx={{ flexGrow: 1 }}>SimpleAutoComplete</Typography>
+        <Typography variant="h6" component="div" sx={{ flexGrow: 1 }}>{ Title }</Typography>
       </Toolbar>
       </AppBar>
     </Box>
@@ -33,7 +31,7 @@ function Header() {
 
 function App() {
   return (
-    document.title = "SimpleAutoComplete";
+    <Helmet><title> {Title} </title></Helmet>
     <div className="App">
       <Grid container spacing={2}>
         <Grid item xs={12}><Header/></Grid>
