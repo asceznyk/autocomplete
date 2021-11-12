@@ -15,15 +15,16 @@ import {
 import logo from './logo.svg';
 import './App.css';
 
-class Welcome extends React.Component {
+class Header extends React.Component {
   render() {
-    return <h1>Hello, {this.props.name}</h1>
+    return <h1>{this.props.name}</h1>
   }
 }
 
 function App() {
   return (
     <div className="App">
+      <Header name="SimpleForms"/>
       <FormControl>
       <InputLabel htmlFor="my-input">Email address</InputLabel>
       <Input id="my-input" aria-describedby="my-helper-text" />
