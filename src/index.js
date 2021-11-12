@@ -1,11 +1,23 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
+
+import {Helmet} from 'react-helmet';
+
 import './index.css';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
 
+class TitleBar extends React.PureComponent {
+  render() {
+    return (
+      <Helmet><title>SimpleAutoComplete</title></Helmet>
+    )
+  }
+}
+
 ReactDOM.render(
   <React.StrictMode>
+    <TitleBar />
     <App />
   </React.StrictMode>,
   document.getElementById('root')

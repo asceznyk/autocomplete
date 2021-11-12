@@ -1,5 +1,4 @@
 import React from 'react';
-import { Helmet } from 'react-helmet';
 
 import {  
   Button, 
@@ -31,7 +30,6 @@ function Header() {
 
 function App() {
   return (
-    <Helmet>{ Title }</Helmet>
     <div className="App">
       <Grid container spacing={2}>
         <Grid item xs={12}><Header/></Grid>
