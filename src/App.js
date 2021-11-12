@@ -3,6 +3,12 @@ import './App.css';
 import { Alert, Button } from '@mui/material'
 import { ShoppingCartRounded } from '@material-ui/icons/'
 
+class Welcome extends React.Component {
+  render() {
+    return <h1>Hello, {this.props.name}</h1>
+  }
+}
+
 function App() {
   return (
     <div className="App">
@@ -19,6 +25,7 @@ function App() {
         >
         this sucks!
         </a>
+        <Welcome name="Asshole!"/>
         <Alert variant="standard" color="info">Check out this alert!</Alert>
         <Button variant="text" startIcon={<ShoppingCartRounded />}>Add to Cart</Button>
       </header>
