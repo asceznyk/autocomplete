@@ -29,7 +29,7 @@ function App() {
         >
         this sucks!
         </a>
-        <Welcome name="Asshole!"/>
+        <Welcome name=""/>
         <Alert variant="standard" color="info">Check out this alert!</Alert>
         <Button variant="text" startIcon={<ShoppingCartRounded />}>Add to Cart</Button>
       </header>
