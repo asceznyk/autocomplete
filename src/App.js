@@ -35,7 +35,7 @@ function App() {
   return (
     <div className="App">
       <Grid container spacing={2}>
-        <Grid item xs={12}}><Header/></Grid>
+        <Grid item xs={12}><Header/></Grid>
         <Grid item xs={12}>
           <FormControl>
           <InputLabel htmlFor="user-input">Type any movie..</InputLabel>
