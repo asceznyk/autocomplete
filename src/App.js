@@ -40,7 +40,7 @@ function App() {
       <InputLabel htmlFor="user-input">Email address</InputLabel>
       <Input id="user-input" aria-describedby="helper-text" />
       <FormHelperText id="helper-text">We'll never share your email.</FormHelperText> 
-      <Button variant="outline" id="user-email">Give my email</Button>
+      <Button variant="outlined" id="user-email">Give my email</Button>
       </FormControl>
     </div>
   );
