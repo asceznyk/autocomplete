@@ -1,11 +1,9 @@
 import React from 'react';
-import ReactDOM from 'react-dom';
 
 import { ShoppingCartRounded } from '@material-ui/icons/';
 import MenuIcon from '@mui/icons-material/Menu';
 
-import { 
-  Alert, 
+import {  
   Button, 
   FormControl, 
   FormHelperText, 
@@ -19,10 +17,6 @@ import {
 } from '@mui/material';
 
 import './App.css';
-
-function Header(props) {
-  return <h1>{props.name}</h1>
-}
 
 function ButtonAppBar() {
   return (
@@ -52,12 +46,12 @@ function App() {
   return (
     <div className="App">
       <ButtonAppBar/>
-      <Header name="SimpleForms"/>
       <FormControl>
-      <InputLabel htmlFor="my-input">Email address</InputLabel>
-      <Input id="my-input" aria-describedby="my-helper-text" />
-      <FormHelperText id="my-helper-text">We'll never share your email.</FormHelperText>
+      <InputLabel htmlFor="user-input">Email address</InputLabel>
+      <Input id="user-input" aria-describedby="helper-text" />
+      <FormHelperText id="helper-text">We'll never share your email.</FormHelperText>
       </FormControl>
+      <Button id="user-email">Give my email</Button>
     </div>
   );
 }
