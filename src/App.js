@@ -33,6 +33,7 @@ function Header() {
 
 function App() {
   return (
+    document.title = "SimpleAutoComplete";
     <div className="App">
       <Grid container spacing={2}>
         <Grid item xs={12}><Header/></Grid>
