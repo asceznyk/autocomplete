@@ -4,10 +4,10 @@ import ReactDOM from 'react-dom';
 import {Helmet} from 'react-helmet';
 
 import './index.css';
-import App from './App';
+import {App, Title} from './App';
 import reportWebVitals from './reportWebVitals';
 
-const Title = 'SimpleAutoComplete';
+//const Title = 'SimpleAutoComplete';
 
 class TitleBar extends React.PureComponent {
   render() {
