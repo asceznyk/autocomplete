@@ -24,7 +24,7 @@ function Header() {
     <Box sx={{ flexGrow: 1 }}>
       <AppBar position="static">
       <Toolbar>
-      <Typography variant="h6" component="div" sx={{ flexGrow: 1 }}SimpleAJAX</Typography>
+        <Typography variant="h6" component="div" sx={{ flexGrow: 1 }}>SimpleAJAX</Typography>
       </Toolbar>
       </AppBar>
     </Box>
