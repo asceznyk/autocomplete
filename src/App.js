@@ -1,7 +1,7 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 
-import { Alert, Button } from '@mui/material';
+import { Alert, Button, FormControl } from '@mui/material';
 import { ShoppingCartRounded } from '@material-ui/icons/';
 
 import logo from './logo.svg';
@@ -16,23 +16,11 @@ class Welcome extends React.Component {
 function App() {
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-        this sucks!
-        </a>
-        <Welcome name=""/>
-        <Alert variant="standard" color="info">Check out this alert!</Alert>
-        <Button variant="text" startIcon={<ShoppingCartRounded />}>Add to Cart</Button>
-      </header>
+      <FormControl>
+      <InputLabel htmlFor="my-input">Email address</InputLabel>
+      <Input id="my-input" aria-describedby="my-helper-text" />
+      <FormHelperText id="my-helper-text">We'll never share your email.</FormHelperText>
+      </FormControl>
     </div>
   );
 }
