@@ -14,6 +14,7 @@ import {
   Toolbar,
   Typography,
   IconButton,
+  Grid
 } from '@mui/material';
 
 import './App.css';
@@ -35,13 +36,15 @@ function ButtonAppBar() {
 function App() {
   return (
     <div className="App">
-      <ButtonAppBar/>
-      <FormControl>
-      <InputLabel htmlFor="user-input">Email address</InputLabel>
-      <Input id="user-input" aria-describedby="helper-text" />
-      <FormHelperText id="helper-text">We'll never share your email.</FormHelperText> 
-      <Button variant="outlined" id="user-email">Give my email</Button>
-      </FormControl>
+      <Grid container spacing={2}>
+        <ButtonAppBar/>
+        <FormControl>
+        <InputLabel htmlFor="user-input">Email address</InputLabel>
+        <Input id="user-input" aria-describedby="helper-text" />
+        <FormHelperText id="helper-text">We'll never share your email.</FormHelperText> 
+        <Button variant="outlined" id="user-email">Give my email</Button>
+        </FormControl>
+      </Grid>
     </div>
   );
 }
