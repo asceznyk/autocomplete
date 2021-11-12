@@ -4,7 +4,7 @@ import ReactDOM from 'react-dom';
 import {Helmet} from 'react-helmet';
 
 import './index.css';
-import {App, Title} from './App';
+import App, {Title} from './App';
 import reportWebVitals from './reportWebVitals';
 
 //const Title = 'SimpleAutoComplete';
