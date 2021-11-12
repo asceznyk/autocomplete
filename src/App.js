@@ -19,15 +19,13 @@ import {
 
 import './App.css';
 
-function ButtonAppBar() {
+function AppBar() {
   return (
     <Box sx={{ flexGrow: 1 }}>
       <AppBar position="static">
-        <Toolbar>
-          <Typography variant="h6" component="div" sx={{ flexGrow: 1 }}>
-            SimpleAJAX
-          </Typography>
-        </Toolbar>
+      <Toolbar>
+      <Typography variant="h6" component="div" sx={{ flexGrow: 1 }}>SimpleAJAX</Typography>
+      </Toolbar>
       </AppBar>
     </Box>
   );
@@ -37,13 +35,17 @@ function App() {
   return (
     <div className="App">
       <Grid container spacing={2}>
-        <ButtonAppBar/>
-        <FormControl>
-        <InputLabel htmlFor="user-input">Email address</InputLabel>
-        <Input id="user-input" aria-describedby="helper-text" />
-        <FormHelperText id="helper-text">We'll never share your email.</FormHelperText> 
-        <Button variant="outlined" id="user-email">Give my email</Button>
-        </FormControl>
+        <Grid item><AppBar/></Grid>
+        <Grid item>
+          <FormControl>
+          <InputLabel htmlFor="user-input">Email address</InputLabel>
+          <Input id="user-input" aria-describedby="helper-text" />
+          <FormHelperText id="helper-text">We'll never share your email.</FormHelperText> 
+          </FormControl>
+        </Grid>
+        <Grid item>
+          <Button variant="outlined" id="user-email">Give my email</Button>
+        </Grid>
       </Grid>
     </div>
   );
