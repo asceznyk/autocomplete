@@ -1,7 +1,11 @@
+import React from 'react';
+import ReactDOM from 'react-dom';
+
+import { Alert, Button } from '@mui/material';
+import { ShoppingCartRounded } from '@material-ui/icons/';
+
 import logo from './logo.svg';
 import './App.css';
-import { Alert, Button } from '@mui/material'
-import { ShoppingCartRounded } from '@material-ui/icons/'
 
 class Welcome extends React.Component {
   render() {
