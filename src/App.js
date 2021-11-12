@@ -35,15 +35,15 @@ function App() {
   return (
     <div className="App">
       <Grid container spacing={2}>
-        <Grid item><Header/></Grid>
-        <Grid item>
+        <Grid item xs={6} md={10}><Header/></Grid>
+        <Grid item xs={6} md={10}>
           <FormControl>
           <InputLabel htmlFor="user-input">Email address</InputLabel>
           <Input id="user-input" aria-describedby="helper-text" />
           <FormHelperText id="helper-text">We'll never share your email.</FormHelperText> 
           </FormControl>
         </Grid>
-        <Grid item>
+        <Grid item xs={6} md={10}>
           <Button variant="outlined" id="user-email">Give my email</Button>
         </Grid>
       </Grid>
