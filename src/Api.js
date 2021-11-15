@@ -2,7 +2,7 @@ const express = require('express');
 const app = express();
 const port = process.env.PORT || 8080;
 
-app.post('/movies', async(req, res) => {
+app.post('/movies', function (req, res) {
   const query = req.body.query;
   res.send(query);
 });
