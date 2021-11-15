@@ -3,7 +3,7 @@ const app = express();
 const port = 3000;
 
 app.get('/', function (req, res) {
-  res.send('Hi there!');
+  res.send('Hellooo!');
 });
 
 app.post('/', function (req, res) {
@@ -11,7 +11,5 @@ app.post('/', function (req, res) {
   res.send(query);
 });
 
-app.listen(port, () => {
-  console.log('server started at http://localhost:' + port);
-});
+app.listen(port, () => console.log('server started at http://localhost:' + port));
 
