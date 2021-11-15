@@ -28,9 +28,15 @@ function Header() {
   );
 }
 
+/*class MovieInput extends React.Component { 
+}*/
+
+function movieEnter() {
+  let movieTitle = document.getElementById("user-input").value;
+  console(movieTitle);
+}
+
 class App extends React.Component {
-
-
   render() {
     return (
       <div className="App">
@@ -39,7 +45,7 @@ class App extends React.Component {
           <Grid item xs={12}>
             <FormControl>
             <InputLabel htmlFor="user-input">Type any movie title..</InputLabel>
-            <Input id="user-input" aria-describedby="helper-text" />
+            <Input onKeyDown={ movieEnter } id="user-input" aria-describedby="helper-text" />
             </FormControl>
           </Grid>
           <Grid item xs={12}>
