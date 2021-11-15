@@ -1,6 +1,6 @@
 const express = require('express');
 const app = express();
-const port = process.env.PORT || 8080;
+const port = 3000;
 
 app.post('/', function (req, res) {
   const query = req.body.query;
