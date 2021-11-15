@@ -5,7 +5,7 @@ import {Helmet} from 'react-helmet';
 
 import './index.css';
 import App, {Title} from './App';
-import './Api'
+//import './Api'
 import reportWebVitals from './reportWebVitals';
 
 class TitleBar extends React.PureComponent {
