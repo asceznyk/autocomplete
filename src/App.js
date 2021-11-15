@@ -28,23 +28,25 @@ function Header() {
   );
 }
 
-function App() {
-  return (
-    <div className="App">
-      <Grid container spacing={2}>
-        <Grid item xs={12}><Header/></Grid>
-        <Grid item xs={12}>
-          <FormControl>
-          <InputLabel htmlFor="user-input">Type any movie..</InputLabel>
-          <Input id="user-input" aria-describedby="helper-text" />
-          </FormControl>
+class App extends React.Component {
+  render() {
+    return (
+      <div className="App">
+        <Grid container spacing={2}>
+          <Grid item xs={12}><Header/></Grid>
+          <Grid item xs={12}>
+            <FormControl>
+            <InputLabel htmlFor="user-input">Type any movie..</InputLabel>
+            <Input id="user-input" aria-describedby="helper-text" />
+            </FormControl>
+          </Grid>
+          <Grid item xs={12}>
+            <Button variant="outlined" id="search-movie">Search</Button>
+          </Grid>
         </Grid>
-        <Grid item xs={12}>
-          <Button variant="outlined" id="search-movie">Search</Button>
-        </Grid>
-      </Grid>
-    </div>
-  );
+      </div>
+    );  
+  }
 }
 
 export default App;
