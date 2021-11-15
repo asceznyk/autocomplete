@@ -14,7 +14,7 @@ import {
 
 import './App.css';
 
-const Title = 'SimpleAutoComplete';
+const Title = 'AutoComplete';
 
 function Header() {
   return (
