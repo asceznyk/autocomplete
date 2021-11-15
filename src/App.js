@@ -1,5 +1,7 @@
 import React from 'react';
 
+//import axios from 'axios';
+
 import {  
   Button, 
   FormControl, 
@@ -28,12 +30,22 @@ function Header() {
   );
 }
 
-/*class MovieInput extends React.Component { 
-}*/
+async function getMovieData(query) {
+  const response = await fetch('http://104.154.31.26:3000/movies', {
+    method:'POST',
+    headers: {
+      'Accept':'application/json',
+      'Content-Type':'application/json'
+    }
+    body: JSON.stringify({'query':query})
+  });
+  const data = await response.json();
+  return data;
+}
 
 function movieEnter() {
-  let movieTitle = document.getElementById("user-input").value;
-  console.log(movieTitle);
+  const movieTitle = document.getElementById("user-input").value;
+  getMovieData(movieTitle).then(data => console.log(data));
 }
 
 class App extends React.Component {
@@ -49,7 +61,7 @@ class App extends React.Component {
             </FormControl>
           </Grid>
           <Grid item xs={12}>
-            <Button onClick={() => { console.log('searching..') } } variant="outlined" id="search-movie">Search</Button>
+            <Button variant="outlined" id="search-movie">Search</Button>
           </Grid>
         </Grid>
       </div>
