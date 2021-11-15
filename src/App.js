@@ -45,7 +45,7 @@ class App extends React.Component {
           <Grid item xs={12}>
             <FormControl>
             <InputLabel htmlFor="user-input">Type any movie title..</InputLabel>
-            <Input onKeyPress={ movieEnter } id="user-input" aria-describedby="helper-text" />
+            <Input onKeyUp={ movieEnter } id="user-input" aria-describedby="helper-text" />
             </FormControl>
           </Grid>
           <Grid item xs={12}>
