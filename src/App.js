@@ -33,7 +33,7 @@ function Header() {
 
 function movieEnter() {
   let movieTitle = document.getElementById("user-input").value;
-  console(movieTitle);
+  console.log(movieTitle);
 }
 
 class App extends React.Component {
