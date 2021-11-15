@@ -29,6 +29,8 @@ function Header() {
 }
 
 class App extends React.Component {
+
+
   render() {
     return (
       <div className="App">
@@ -36,12 +38,12 @@ class App extends React.Component {
           <Grid item xs={12}><Header/></Grid>
           <Grid item xs={12}>
             <FormControl>
-            <InputLabel htmlFor="user-input">Type any movie..</InputLabel>
+            <InputLabel htmlFor="user-input">Type any movie title..</InputLabel>
             <Input id="user-input" aria-describedby="helper-text" />
             </FormControl>
           </Grid>
           <Grid item xs={12}>
-            <Button variant="outlined" id="search-movie">Search</Button>
+            <Button onClick={() => { console.log('searching..') } } variant="outlined" id="search-movie">Search</Button>
           </Grid>
         </Grid>
       </div>
