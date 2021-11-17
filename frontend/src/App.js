@@ -31,7 +31,7 @@ function Header() {
 }
 
 async function getMovieData(query) {
-  const response = await fetch('http://104.154.31.26:3000/', {
+  const response = await fetch('http://34.123.56.103:5000/', {
     method:'POST',
     headers: {
       'Accept':'application/json',
