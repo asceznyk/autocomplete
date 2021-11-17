@@ -15,7 +15,7 @@ app.get('/', function (req, res) {
 });
 
 app.post('/', function (req, res) {
-  const query = req.body.query;
+  const {query} = req.body;
   res.json(query);
 });
 
