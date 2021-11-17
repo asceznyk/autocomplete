@@ -15,8 +15,8 @@ app.get('/', function (req, res) {
 });
 
 app.post('/', function (req, res) {
-  const query = req;
-  res.send(query);
+  //const query = req;
+  res.send('sample string -->');
 });
 
 app.listen(port, () => console.log('server started at http://localhost:' + port));
