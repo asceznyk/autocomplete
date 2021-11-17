@@ -15,8 +15,10 @@ app.get('/', function (req, res) {
 });
 
 app.post('/', function (req, res) {
-  const query = req;
-  res.json(req);
+  //const query = req;
+  //res.json(req);
+  console.log('Request body ->');
+  console.log(req);
 });
 
 app.listen(port, () => console.log('server started at http://localhost:' + port));
