@@ -47,37 +47,30 @@ const bull = (
     •
   </Box>
 );
-
-class OutlinedCard extends React.Component {
-  constructor() {
-    this.state = {};
-  }
-
-  render() {
-    return (
-      <Box sx={{ minWidth: 275 }}>
-      <Card variant="outlined">
-        <CardContent>
-          <Typography sx={{ fontSize: 14 }} color="text.secondary" gutterBottom>
-            Title Searched
-          </Typography>
-          <Typography variant="h5" component="div">
-            { this.props.header }
-          </Typography>
-          <Typography sx={{ mb: 1.5 }} color="text.secondary">
-            Genre: action
-          </Typography>
-          <Typography variant="body2">
-            some info some info some info
-          </Typography>
-        </CardContent>
-        <CardActions>
-          <Button size="small">Learn More</Button>
-        </CardActions>
-      </Card>
-      </Box>
-    );
-  }
+function OutlinedCard(props) {
+  return (
+    <Box sx={{ minWidth: 275 }}>
+    <Card variant="outlined">
+      <CardContent>
+        <Typography sx={{ fontSize: 14 }} color="text.secondary" gutterBottom>
+          Title Searched
+        </Typography>
+        <Typography variant="h5" component="div">
+          { props.header }
+        </Typography>
+        <Typography sx={{ mb: 1.5 }} color="text.secondary">
+          Genre: action
+        </Typography>
+        <Typography variant="body2">
+          { props.body }
+        </Typography>
+      </CardContent>
+      <CardActions>
+        <Button size="small">Learn More</Button>
+      </CardActions>
+    </Card>
+    </Box>
+  );
 }
 
 function Header() {
@@ -92,22 +85,28 @@ function Header() {
   );
 }
 
-function App() {
-  return (
-    <div className="App">
-      <Header/>
-      <Container> 
-      <Box mt={1} mb={1}>
-        <Box mb={2}><FormControl>
-          <InputLabel htmlFor="user-input">Type any movie title..</InputLabel>
-          <Input id="user-input" aria-describedby="helper-text" />
-        </FormControl></Box>
-        <Box mb={2}><Button variant="outlined" id="search-movie">Search</Button></Box>
-      </Box>
-      <OutlinedCard header="Something" body=""/>
-      </Container>
-    </div>
-  );  
+class App extends React.Component {
+  constructor(props) {
+    super(props)
+  }
+
+  render() {
+    return (
+      <div className="App">
+        <Header/>
+        <Container> 
+        <Box mt={1} mb={1}>
+          <Box mb={2}><FormControl>
+            <InputLabel htmlFor="user-input">Type any movie title..</InputLabel>
+            <Input id="user-input" aria-describedby="helper-text" />
+          </FormControl></Box>
+          <Box mb={2}><Button variant="outlined" id="search-movie">Search</Button></Box>
+        </Box>
+        <OutlinedCard header="Something" body=""/>
+        </Container>
+      </div>
+    );  
+  }
 }
 
 export default App;
