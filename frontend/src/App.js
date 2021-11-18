@@ -18,18 +18,6 @@ import './App.css';
 
 const Title = 'AutoComplete';
 
-function Header() {
-  return (
-    <Box sx={{ flexGrow: 1 }}>
-      <AppBar position="static">
-      <Toolbar>
-        <Typography variant="h6" component="div" sx={{ flexGrow: 1 }}>{ Title }</Typography>
-      </Toolbar>
-      </AppBar>
-    </Box>
-  );
-}
-
 async function getMovieData(query) {
   const response = await fetch('http://34.132.37.226:5000/', {
     method:'POST',
@@ -48,6 +36,20 @@ function movieEnter() {
   const userInput  = document.getElementById("user-input"); 
   const movieTitle = userInput.value;
   getMovieData(movieTitle).then(data => {receiver.innerHTML = data});
+}
+
+class Header extends React.Component() {
+  render() {
+    return (
+      <Box sx={{ flexGrow: 1 }}>
+        <AppBar position="static">
+        <Toolbar>
+          <Typography variant="h6" component="div" sx={{ flexGrow: 1 }}>{ Title }</Typography>
+        </Toolbar>
+        </AppBar>
+      </Box>
+    );
+  }
 }
 
 class App extends React.Component {
