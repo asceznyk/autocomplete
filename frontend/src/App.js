@@ -60,7 +60,9 @@ function Header() {
 function App() { 
   const [error, setError] = useState(null);
   const [isLoaded, setIsLoaded] = useState(false);
-  const [items, setItems] = useState([]);
+  const [items, setItems] = useState('');
+  const [input, setInput] = useState('');
+
 
   const handleClick = (e) => {
     e.preventDefault()
@@ -71,7 +73,7 @@ function App() {
         'Accept':'application/json',
         'Content-Type':'application/json'
       },
-      body: JSON.stringify({'query':query})
+      body: JSON.stringify({'query': input})
     })
     .then(response => response.json())
     .then(data => {
@@ -87,7 +89,7 @@ function App() {
       <Box mt={1} mb={1}>
         <Box mb={2}><FormControl>
           <InputLabel htmlFor="user-input">Type any movie title..</InputLabel>
-          <Input id="user-input" aria-describedby="helper-text" />
+          <Input id="user-input" value={input} onInput={e => setInput(e.target.value)} aria-describedby="helper-text" />
         </FormControl></Box>
         <Box mb={2}><Button variant="outlined" id="search-movie" onClick={ handleClick }>Search</Button></Box>
       </Box>
