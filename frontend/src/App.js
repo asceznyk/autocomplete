@@ -60,7 +60,7 @@ function Header() {
 function App() { 
   const [error, setError] = useState(null);
   const [isLoaded, setIsLoaded] = useState(false);
-  const [items, setItems] = useState('');
+  const [body, setBody] = useState('');
   const [input, setInput] = useState('');
 
 
@@ -80,7 +80,7 @@ function App() {
     .then(response => response.json())
     .then(data => {
       setIsLoaded(true);
-      setItems(data);
+      setBody(data);
     })
   }
 
@@ -95,7 +95,7 @@ function App() {
         </FormControl></Box>
         <Box mb={2}><Button variant="outlined" id="search-movie" onClick={ handleClick }>Search</Button></Box>
       </Box>
-      <OutlinedCard header="Something" body={ items } />
+      <OutlinedCard header="Something" body = { body } />
       </Container>
     </div>
   );  
