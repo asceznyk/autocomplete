@@ -64,8 +64,10 @@ function App() {
   const [input, setInput] = useState('');
 
 
-  const handleClick = (e) => {
-    e.preventDefault()
+  function handleClick(e) {
+    e.preventDefault();
+
+    console.log('clicked!')
 
     fetch('http://34.132.37.226:5000/', {
       method:'POST',
