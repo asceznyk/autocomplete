@@ -73,7 +73,7 @@ function App() {
       },
       body: JSON.stringify({'query':query})
     })
-    .then(response => response.json());
+    .then(response => response.json())
     .then(data => {
       setIsLoaded(true);
       setItems(data);
