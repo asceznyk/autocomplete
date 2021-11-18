@@ -11,7 +11,8 @@ import {
   Typography,
   Card,
   CardActions,
-  CardContent
+  CardContent,
+  Container
 } from '@mui/material';
 
 import './App.css';
@@ -95,7 +96,7 @@ function App() {
   return (
     <div className="App">
       <Header/>
-      <div className="wrapper"> 
+      <Container> 
       <Box mt={2} mb={2}>
         <Box mb={2}><FormControl>
           <InputLabel htmlFor="user-input">Type any movie title..</InputLabel>
@@ -104,7 +105,7 @@ function App() {
         <Box mb={2}><Button variant="outlined" id="search-movie">Search</Button></Box>
       </Box>
       <OutlinedCard header="Something" body=""/>
-      </div>
+      </Container>
     </div>
   );  
 }
