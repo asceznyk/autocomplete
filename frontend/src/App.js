@@ -49,6 +49,10 @@ const bull = (
 );
 
 class OutlinedCard extends React.Component {
+  constructor() {
+    this.state = {};
+  }
+
   render() {
     return (
       <Box sx={{ minWidth: 275 }}>
@@ -58,6 +62,7 @@ class OutlinedCard extends React.Component {
             Title Searched
           </Typography>
           <Typography variant="h5" component="div">
+            { this.props.header }
           </Typography>
           <Typography sx={{ mb: 1.5 }} color="text.secondary">
             Genre: action
