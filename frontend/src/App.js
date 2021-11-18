@@ -65,7 +65,7 @@ class App extends React.Component {
           <Grid item xs={12}>
             <Button variant="outlined" id="search-movie">Search</Button>
           </Grid>
-          <div id="receiver"></div>
+          <Grid item xs= {12} id="receiver"></Grid>
         </Grid>
       </div>
     );  
