@@ -101,8 +101,8 @@ function App() {
           <InputLabel htmlFor="user-input">Type any movie title..</InputLabel>
           <Input onKeyUp={ movieEnter } id="user-input" aria-describedby="helper-text" />
         </FormControl></Box>
-        <Box><Button variant="outlined" id="search-movie">Search</Button></Box>
-      </Box mb={2}>
+        <Box mb={2}><Button variant="outlined" id="search-movie">Search</Button></Box>
+      </Box>
       <OutlinedCard header="Something" body=""/>
       </div>
     </div>
