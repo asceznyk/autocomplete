@@ -11,7 +11,10 @@ import {
   Box, 
   Toolbar,
   Typography,
-  Grid
+  Grid,
+  Card,
+  CardActions,
+  CardContent
 } from '@mui/material';
 
 import './App.css';
@@ -38,40 +41,79 @@ function movieEnter() {
   getMovieData(movieTitle).then(data => {receiver.innerHTML = data});
 }
 
-class Header extends React.Component {
-  render() {
-    return (
-      <Box sx={{ flexGrow: 1 }}>
-        <AppBar position="static">
-        <Toolbar>
-          <Typography variant="h6" component="div" sx={{ flexGrow: 1 }}>{ Title }</Typography>
-        </Toolbar>
-        </AppBar>
-      </Box>
-    );
-  }
+const bull = (
+  <Box
+    component="span"
+    sx={{ display: 'inline-block', mx: '2px', transform: 'scale(0.8)' }}
+  >
+    •
+  </Box>
+);
+
+const card = (
+  <React.Fragment>
+    <CardContent>
+      <Typography sx={{ fontSize: 14 }} color="text.secondary" gutterBottom>
+        Word of the Day
+      </Typography>
+      <Typography variant="h5" component="div">
+        be{bull}nev{bull}o{bull}lent
+      </Typography>
+      <Typography sx={{ mb: 1.5 }} color="text.secondary">
+        adjective
+      </Typography>
+      <Typography variant="body2">
+        well meaning and kindly.
+        <br />
+        {'"a benevolent smile"'}
+      </Typography>
+    </CardContent>
+    <CardActions>
+      <Button size="small">Learn More</Button>
+    </CardActions>
+  </React.Fragment>
+);
+
+function OutlinedCard() {
+  return (
+    <Box sx={{ minWidth: 275 }}>
+      <Card variant="outlined">{card}</Card>
+    </Box>
+  );
 }
 
-class App extends React.Component {
-  render() {
-    return (
-      <div className="App">
-        <Grid container spacing={2}>
-          <Grid item xs={12}><Header/></Grid>
-          <Grid item xs={12}>
-            <FormControl>
-            <InputLabel htmlFor="user-input">Type any movie title..</InputLabel>
-            <Input onKeyUp={ movieEnter } id="user-input" aria-describedby="helper-text" />
-            </FormControl>
-          </Grid>
-          <Grid item xs={12}>
-            <Button variant="outlined" id="search-movie">Search</Button>
-          </Grid>
-          <Grid item xs= {12} id="receiver"></Grid>
+function Header() {
+  return (
+    <Box sx={{ flexGrow: 1 }}>
+      <AppBar position="static">
+      <Toolbar>
+        <Typography variant="h6" component="div" sx={{ flexGrow: 1 }}>{ Title }</Typography>
+      </Toolbar>
+      </AppBar>
+    </Box>
+  );
+}
+
+function App() {
+  return (
+    <div className="App">
+      <Grid container spacing={2}>
+        <Grid item xs={12}><Header/></Grid>
+        <Grid item xs={12}>
+          <FormControl>
+          <InputLabel htmlFor="user-input">Type any movie title..</InputLabel>
+          <Input onKeyUp={ movieEnter } id="user-input" aria-describedby="helper-text" />
+          </FormControl>
         </Grid>
-      </div>
-    );  
-  }
+        <Grid item xs={12}>
+          <Button variant="outlined" id="search-movie">Search</Button>
+        </Grid>
+        <Grid item xs= {12}>
+          <OutlinedCard header="Something" body=""/>
+        </Grid>
+      </Grid>
+    </div>
+  );  
 }
 
 export default App;
