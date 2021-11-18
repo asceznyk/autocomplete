@@ -14,7 +14,7 @@ app.post('/', function (req, res) {
   let {query} = req.body;
   let content = {
     header: query,
-    body: 'lorem ipsum' + query
+    body: 'lorem ipsum ' + query
   }
   res.json(content);
 });
