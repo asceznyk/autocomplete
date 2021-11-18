@@ -17,8 +17,6 @@ import {
 import './App.css';
 
 const Title = 'AutoComplete';
-const receiver = document.getElementById('receiver');
-const userInput =document.getElementById("user-input"); 
 
 function Header() {
   return (
@@ -46,6 +44,8 @@ async function getMovieData(query) {
 }
 
 function movieEnter() {
+  const receiver = document.getElementById("receiver");
+  const userInput  = document.getElementById("user-input"); 
   const movieTitle = userInput.value;
   getMovieData(movieTitle).then(data => receiver.html(data));
 }
