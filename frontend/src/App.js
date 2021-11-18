@@ -108,9 +108,11 @@ function App() {
         <Grid item xs={12}>
           <Button variant="outlined" id="search-movie">Search</Button>
         </Grid>
-        <Grid item xs= {12}>
+        <Grid item xs= {4}></Grid>
+        <Grid item xs= {4}>
           <OutlinedCard header="Something" body=""/>
         </Grid>
+        <Grid item xs= {4}></Grid>
       </Grid>
     </div>
   );  
