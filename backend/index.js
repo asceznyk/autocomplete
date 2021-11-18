@@ -12,8 +12,11 @@ app.use(cors());
 
 app.post('/', function (req, res) {
   let {query} = req.body;
-  query = '-- ' + query + ' --';
-  res.json(query);
+  let content = {
+    header: query,
+    body: 'lorem ipsum' + query
+  }
+  res.json(content);
 });
 
 app.listen(port, () => console.log('server started at http://localhost:' + port));
