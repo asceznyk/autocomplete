@@ -95,12 +95,14 @@ function App() {
   return (
     <div className="App">
       <Header/>
+      <div className="wrapper"> 
       <FormControl>
         <InputLabel htmlFor="user-input">Type any movie title..</InputLabel>
         <Input onKeyUp={ movieEnter } id="user-input" aria-describedby="helper-text" />
       </FormControl> 
       <Button variant="outlined" id="search-movie">Search</Button> 
       <OutlinedCard header="Something" body=""/>
+      </div>
     </div>
   );  
 }
