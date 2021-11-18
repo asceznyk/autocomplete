@@ -17,6 +17,8 @@ import {
 import './App.css';
 
 const Title = 'AutoComplete';
+const receiver = document.getElementById('receiver');
+const userInput =document.getElementById("user-input"); 
 
 function Header() {
   return (
@@ -44,8 +46,8 @@ async function getMovieData(query) {
 }
 
 function movieEnter() {
-  const movieTitle = document.getElementById("user-input").value;
-  getMovieData(movieTitle).then(data => console.log(data));
+  const movieTitle = userInput.value;
+  getMovieData(movieTitle).then(data => receiver.html(data));
 }
 
 class App extends React.Component {
@@ -63,6 +65,7 @@ class App extends React.Component {
           <Grid item xs={12}>
             <Button variant="outlined" id="search-movie">Search</Button>
           </Grid>
+          <div id="receiver"></div>
         </Grid>
       </div>
     );  
