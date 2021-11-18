@@ -1,7 +1,5 @@
 import React from 'react';
 
-//import axios from 'axios';
-
 import {  
   Button, 
   FormControl, 
@@ -11,7 +9,6 @@ import {
   Box, 
   Toolbar,
   Typography,
-  Grid,
   Card,
   CardActions,
   CardContent
@@ -97,23 +94,13 @@ function Header() {
 function App() {
   return (
     <div className="App">
-      <Grid container spacing={2}>
-        <Grid item xs={12}><Header/></Grid>
-        <Grid item xs={12}>
-          <FormControl>
-          <InputLabel htmlFor="user-input">Type any movie title..</InputLabel>
-          <Input onKeyUp={ movieEnter } id="user-input" aria-describedby="helper-text" />
-          </FormControl>
-        </Grid>
-        <Grid item xs={12}>
-          <Button variant="outlined" id="search-movie">Search</Button>
-        </Grid>
-        <Grid item xs= {4}></Grid>
-        <Grid item xs= {4}>
-          <OutlinedCard header="Something" body=""/>
-        </Grid>
-        <Grid item xs= {4}></Grid>
-      </Grid>
+      <Header/>
+      <FormControl>
+        <InputLabel htmlFor="user-input">Type any movie title..</InputLabel>
+        <Input onKeyUp={ movieEnter } id="user-input" aria-describedby="helper-text" />
+      </FormControl> 
+      <Button variant="outlined" id="search-movie">Search</Button> 
+      <OutlinedCard header="Something" body=""/>
     </div>
   );  
 }
