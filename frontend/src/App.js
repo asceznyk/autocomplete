@@ -96,13 +96,13 @@ function App() {
     <div className="App">
       <Header/>
       <div className="wrapper"> 
-      <Box m={2}>
-        <Box><FormControl>
+      <Box mt={2} mb={2}>
+        <Box mb={2}><FormControl>
           <InputLabel htmlFor="user-input">Type any movie title..</InputLabel>
           <Input onKeyUp={ movieEnter } id="user-input" aria-describedby="helper-text" />
         </FormControl></Box>
         <Box><Button variant="outlined" id="search-movie">Search</Button></Box>
-      </Box>
+      </Box mb={2}>
       <OutlinedCard header="Something" body=""/>
       </div>
     </div>
