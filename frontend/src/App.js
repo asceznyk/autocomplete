@@ -19,25 +19,6 @@ import './App.css';
 
 const Title = 'AutoComplete';
 
-async function getMovieData(query) {
-    return data;
-}
-
-function movieEnter() {
-  const receiver = document.getElementById("receiver");
-  const userInput  = document.getElementById("user-input"); 
-  const movieTitle = userInput.value;
-  getMovieData(movieTitle).then(data => {receiver.innerHTML = data});
-}
-
-const bull = (
-  <Box
-    component="span"
-    sx={{ display: 'inline-block', mx: '2px', transform: 'scale(0.8)' }}
-  >
-    •
-  </Box>
-);
 function OutlinedCard(props) {
   return (
     <Box sx={{ minWidth: 275 }}>
