@@ -12,7 +12,7 @@ app.use(cors());
 
 app.post('/', function (req, res) {
   let {query} = req.body;
-  query = '--' + query + '--';
+  query = '-- ' + query + ' --';
   res.json(query);
 });
 
