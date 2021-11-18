@@ -97,7 +97,7 @@ function App() {
     <div className="App">
       <Header/>
       <Container> 
-      <Box mt={2} mb={2}>
+      <Box mt={1} mb={1}>
         <Box mb={2}><FormControl>
           <InputLabel htmlFor="user-input">Type any movie title..</InputLabel>
           <Input id="user-input" aria-describedby="helper-text" />
