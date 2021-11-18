@@ -38,7 +38,7 @@ function movieEnter() {
   getMovieData(movieTitle).then(data => {receiver.innerHTML = data});
 }
 
-class Header extends React.Component() {
+class Header extends React.Component {
   render() {
     return (
       <Box sx={{ flexGrow: 1 }}>
