@@ -20,16 +20,7 @@ import './App.css';
 const Title = 'AutoComplete';
 
 async function getMovieData(query) {
-  const response = await fetch('http://34.132.37.226:5000/', {
-    method:'POST',
-    headers: {
-      'Accept':'application/json',
-      'Content-Type':'application/json'
-    },
-    body: JSON.stringify({'query':query})
-  });
-  const data = await response.json();
-  return data;
+    return data;
 }
 
 function movieEnter() {
@@ -85,28 +76,44 @@ function Header() {
   );
 }
 
-class App extends React.Component {
-  constructor(props) {
-    super(props)
+function App() { 
+  const [error, setError] = useState(null);
+  const [isLoaded, setIsLoaded] = useState(false);
+  const [items, setItems] = useState([]);
+
+  const handleClick = (e) => {
+    e.preventDefault()
+
+    fetch('http://34.132.37.226:5000/', {
+      method:'POST',
+      headers: {
+        'Accept':'application/json',
+        'Content-Type':'application/json'
+      },
+      body: JSON.stringify({'query':query})
+    })
+    .then(response => response.json());
+    .then(data => {
+      setIsLoaded(true);
+      setItems(data);
+    })
   }
 
-  render() {
-    return (
-      <div className="App">
-        <Header/>
-        <Container> 
-        <Box mt={1} mb={1}>
-          <Box mb={2}><FormControl>
-            <InputLabel htmlFor="user-input">Type any movie title..</InputLabel>
-            <Input id="user-input" aria-describedby="helper-text" />
-          </FormControl></Box>
-          <Box mb={2}><Button variant="outlined" id="search-movie">Search</Button></Box>
-        </Box>
-        <OutlinedCard header="Something" body=""/>
-        </Container>
-      </div>
-    );  
-  }
+  return (
+    <div className="App">
+      <Header/>
+      <Container> 
+      <Box mt={1} mb={1}>
+        <Box mb={2}><FormControl>
+          <InputLabel htmlFor="user-input">Type any movie title..</InputLabel>
+          <Input id="user-input" aria-describedby="helper-text" />
+        </FormControl></Box>
+        <Box mb={2}><Button variant="outlined" id="search-movie" onClick={ handleClick }>Search</Button></Box>
+      </Box>
+      <OutlinedCard header="Something" body={ items } />
+      </Container>
+    </div>
+  );  
 }
 
 export default App;
