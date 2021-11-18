@@ -11,7 +11,7 @@ app.use(bodyParser.urlencoded({ limit: '30mb', extended: true }));
 app.use(cors());
 
 app.post('/', function (req, res) {
-  const {query} = req.body;
+  let {query} = req.body;
   query = '--' + query + '--';
   res.json(query);
 });
