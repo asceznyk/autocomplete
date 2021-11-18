@@ -47,7 +47,7 @@ function movieEnter() {
   const receiver = document.getElementById("receiver");
   const userInput  = document.getElementById("user-input"); 
   const movieTitle = userInput.value;
-  getMovieData(movieTitle).then(data => receiver.innerHTML(data));
+  getMovieData(movieTitle).then(data => {receiver.innerHTML = data});
 }
 
 class App extends React.Component {
