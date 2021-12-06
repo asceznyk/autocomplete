@@ -22,6 +22,7 @@ app.post('/', function (req, res) {
 });
 
 mongoose.connect(dbendpoint).then(
-  () => app.listen(port, () => console.log(`server started at http://localhost:${port}`))
+  () => app.listen(port, 
+    () => console.log(`server started at http://localhost:${port}, connected to database`))
 ).catch((error) => console.log(`${error} could not connect`));
 
