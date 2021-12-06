@@ -2,6 +2,7 @@ import express from 'express';
 import cors from 'cors';
 import bodyParser from 'body-parser';
 import mongoose from 'mongoose';
+import MongoClient from 'mongodb';
 
 const app = express();
 const port = process.env.PORT || 5000;
@@ -14,6 +15,21 @@ app.use(cors());
 
 app.post('/', function (req, res) {
   let {query} = req.body;
+
+  let item = {
+    query: query
+  }
+
+  MongoClient.connect(dbendpoint, function(err, db) {
+    if(err) throw err;
+    let dbo = db.db('testdb');
+    dbo.collection('user_queries').insertOne(item, function(err, res) {
+      if(err) throw err;
+      console.log('1 document inserted');
+      db.close();
+    });
+  });
+
   let content = {
     header: query,
     body: 'lorem ipsum ' + query
