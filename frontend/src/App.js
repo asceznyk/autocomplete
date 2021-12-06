@@ -72,7 +72,7 @@ function App() {
 
     console.log('clicked!')
 
-    fetch('http://127.0.0.1:5000/', {
+    fetch('http://35.226.247.154:5000', {
       method:'POST',
       headers: {
         'Accept':'application/json',
