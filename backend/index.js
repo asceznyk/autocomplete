@@ -1,9 +1,11 @@
 import express from 'express';
 import cors from 'cors';
 import bodyParser from 'body-parser';
+import mongoose from 'mongoose';
 
 const app = express();
 const port = process.env.PORT || 5000;
+const dbendpoint = 'mongodb+srv://ahanh:ahan0208@testdb.zbnu7.mongodb.net/testdb?retryWrites=true&w=majority';
 
 app.use(express.json());
 app.use(bodyParser.json({ limit: '30mb', extended: true }));
@@ -19,5 +21,7 @@ app.post('/', function (req, res) {
   res.json(content);
 });
 
-app.listen(port, () => console.log('server started at http://localhost:' + port));
+mongoose.connect(dbendpoint).then(
+  () => app.listen(port, () => console.log(`server started at http://localhost:${port}`))
+).catch((error) => console.log(`${error} could not connect`));
 
