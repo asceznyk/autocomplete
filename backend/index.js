@@ -2,11 +2,27 @@ import express from 'express';
 import cors from 'cors';
 import bodyParser from 'body-parser';
 import mongoose from 'mongoose';
-import MongoClient from 'mongodb';
+import { MongoClient } from 'mongodb';
 
 const app = express();
 const port = process.env.PORT || 5000;
-const dbendpoint = 'mongodb+srv://ahanh:ahan0208@testdb.zbnu7.mongodb.net/testdb?retryWrites=true&w=majority';
+const dbname = 'testdb';
+const url = 'mongodb+srv://ahanh:ahan0208@testdb.zbnu7.mongodb.net/testdb?retryWrites=true&w=majority';
+const client = new MongoClient(url);
+
+async function dbConnect() {
+  let res = await client.connect();
+  let db = res.db(dbname);
+  return db.collection('user_queries');
+}
+
+async function insertData(item) {
+  let collection = await dbConnect();
+  let res = await collection.insert(item);
+  if(res.acknowledged) {
+    console.log('data is inserted!');
+  }
+}
 
 app.use(express.json());
 app.use(bodyParser.json({ limit: '30mb', extended: true }));
@@ -16,19 +32,7 @@ app.use(cors());
 app.post('/', function (req, res) {
   let {query} = req.body;
 
-  let item = {
-    query: query
-  }
-
-  MongoClient.connect(dbendpoint, function(err, db) {
-    if(err) throw err;
-    let dbo = db.db('testdb');
-    dbo.collection('user_queries').insertOne(item, function(err, res) {
-      if(err) throw err;
-      console.log('1 document inserted');
-      db.close();
-    });
-  });
+  insertData({'query': query});
 
   let content = {
     header: query,
@@ -37,7 +41,7 @@ app.post('/', function (req, res) {
   res.json(content);
 });
 
-mongoose.connect(dbendpoint).then(
+mongoose.connect(url).then(
   () => app.listen(port, 
     () => console.log(`server started at http://localhost:${port}, connected to database`))
 ).catch((error) => console.log(`${error} could not connect`));
