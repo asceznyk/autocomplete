@@ -27,9 +27,8 @@ async function insertData(item) {
 }
 
 async function selectData() {
-  result = await client.connect();
-  db = result.db(dbname);
-  content = db.user_queries.find({});
+  collection await dbConnect();
+  content = collection.find({});
   console.log(content)
   return content
 } 
