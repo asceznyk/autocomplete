@@ -10,34 +10,43 @@ const dbname = 'testdb';
 const url = 'mongodb+srv://ahanh:ahan0208@testdb.zbnu7.mongodb.net/testdb?retryWrites=true&w=majority';
 const client = new MongoClient(url);
 
+let content, collection, result, db;
+
 async function dbConnect() {
-  let res = await client.connect();
-  let db = res.db(dbname);
+  result = await client.connect();
+  db = res.db(dbname);
   return db.collection('user_queries');
 }
 
 async function insertData(item) {
-  let collection = await dbConnect();
-  let res = await collection.insert(item);
-  if(res.acknowledged) {
+  collection = await dbConnect();
+  result = await collection.insert(item);
+  if(result.acknowledged) {
     console.log('data is inserted!');
   }
 }
+
+async function selectData() {
+  collection = await dbConnect();
+  result = await collection.find();
+  return result
+} 
 
 app.use(express.json());
 app.use(bodyParser.json({ limit: '30mb', extended: true }));
 app.use(bodyParser.urlencoded({ limit: '30mb', extended: true }));
 app.use(cors());
 
+app.get('/' function (req, res) {
+  content = selectData();
+  console.log(content);
+  res.json(content);
+});
+
 app.post('/', function (req, res) {
   let {query} = req.body;
-
   insertData({'query': query});
-
-  let content = {
-    header: query,
-    body: 'lorem ipsum ' + query
-  }
+  content = selectData();
   res.json(content);
 });
 
