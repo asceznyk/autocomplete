@@ -100,9 +100,9 @@ function App() {
             id="user-input"
             options={topMovies}
             renderOption={(props, option) => (
-              <Box component="li" onClick={e => setQuery(option.label)} {...props}>{option.label} {option.year}</Box>
+              <Box component="li" {...props} onClick={e => setQuery(option.label)}>{option.label} {option.year}</Box>
             )}
-            renderInput={(params) => <TextField {...params} label="Movie"/>}
+            renderInput={(params) => <TextField {...params} onChange={e => setQuery(e.target.value)} label="Movie"/>}
           />
         </Box>
         <Box mb={2}>
