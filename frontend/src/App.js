@@ -109,7 +109,7 @@ function App() {
               } else if (newValue && newValue.inputValue) {
                 // Create a new value from the user input
                 setQuery(newValue);
-              } else {
+              } else if (typeof newValue === 'object'){
                 setQuery(newValue.label);
               }
             }}
