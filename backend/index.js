@@ -29,8 +29,9 @@ async function insertData(item) {
 async function selectData() {
   collection = await dbConnect();
   content = collection.find({});
-  await content.forEach(console.dir);
-  return content
+  let rows = [];
+  await content.forEach(rows.push);
+  return rows;
 } 
 
 app.use(express.json());
