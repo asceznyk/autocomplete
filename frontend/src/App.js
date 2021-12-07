@@ -74,6 +74,8 @@ function App() {
   function handleClick(e) {
     e.preventDefault();
 
+    setQuery(e.target.value);
+
     fetch('http://35.222.117.4:5000', {
       method:'POST',
       headers: {
@@ -100,9 +102,8 @@ function App() {
             id="user-input"
             options={topMovies}
             renderOption={(props, option) => (
-              <Box component="li" {...props} onClick={e => setQuery(option.label)}>{option.label} {option.year}</Box>
-            )}
-            renderInput={(params) => <TextField {...params} onChange={e => setQuery(e.target.value)} label="Movie"/>}
+              <Box component="li" {...props}>{option.label} {option.year}</Box>)}
+            renderInput={(params) => <TextField {...params} label="Movie"/>}
           />
         </Box>
         <Box mb={2}>
