@@ -12,10 +12,14 @@ import {
   Card,
   CardActions,
   CardContent,
-  Container
+  Container,
+  Autocomplete,
+  TextField
 } from '@mui/material';
 
 import './App.css';
+
+import topMovies from './Movies.js'
 
 const Title = 'AutoComplete';
 
@@ -57,6 +61,18 @@ function Header() {
   );
 }
 
+function ComboBox() {
+  return (
+    <Autocomplete
+      disablePortal
+      id="combo-box-demo"
+      options={topMovies}
+      sx={{ width: 300 }}
+      renderInput={(params) => <TextField {...params} label="Movie" />}
+    />
+  );
+}
+
 function App() { 
   const [error, setError] = useState(null);
   const [isLoaded, setIsLoaded] = useState(false);
@@ -72,7 +88,7 @@ function App() {
 
     console.log('clicked!')
 
-    fetch('http://35.226.247.154:5000', {
+    fetch('http://35.222.117.4:5000', {
       method:'POST',
       headers: {
         'Accept':'application/json',
@@ -92,11 +108,16 @@ function App() {
       <Header/>
       <Container> 
       <Box mt={1} mb={1}>
-        <Box mb={2}><FormControl>
-          <InputLabel htmlFor="user-input">Type any movie title..</InputLabel>
-          <Input id="user-input" value={query} onInput={e => setQuery(e.target.value)} aria-describedby="helper-text" />
-        </FormControl></Box>
-        <Box mb={2}><Button variant="outlined" id="search-movie" onClick={ handleClick }>Search</Button></Box>
+        <Box mb={2}>
+          <ComboBox 
+          value={query} 
+          onInput={e => setQuery(e.target.value)} 
+          aria-describedby="helper-text"
+          />
+        </Box>
+        <Box mb={2}>
+          <Button variant="outlined" id="search-movie" onClick={ handleClick }>Search</Button>
+        </Box>
       </Box>
       <OutlinedCard header= {content.header} body = {content.body} />
       </Container>
