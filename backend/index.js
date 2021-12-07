@@ -30,6 +30,7 @@ async function selectData() {
   result = await client.connect();
   db = result.db(dbname);
   content = db.user_queries.find({});
+  console.log(content)
   return content
 } 
 
@@ -40,7 +41,6 @@ app.use(cors());
 
 app.get('/', function (req, res) {
   content = selectData();
-  console.log(content);
   res.json(content);
 });
 
