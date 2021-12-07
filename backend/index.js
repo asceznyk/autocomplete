@@ -30,7 +30,9 @@ async function selectData() {
   collection = await dbConnect();
   content = collection.find({});
   let rows = [];
-  await content.forEach(rows.push);
+  await content.forEach((row) => {
+    rows.push(row);
+  });
   return rows;
 } 
 
