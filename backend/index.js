@@ -27,10 +27,10 @@ async function insertData(item) {
 }
 
 async function selectData() {
-  collection = await dbConnect();
-  result = await collection.find();
-  console.log(result);
-  return result
+  result = await client.connect();
+  db = result.db(dbname);
+  content = db.user_queries.find({});
+  return content
 } 
 
 app.use(express.json());
