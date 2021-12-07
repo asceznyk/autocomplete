@@ -14,7 +14,7 @@ let content, collection, result, db;
 
 async function dbConnect() {
   result = await client.connect();
-  db = res.db(dbname);
+  db = result.db(dbname);
   return db.collection('user_queries');
 }
 
