@@ -107,8 +107,7 @@ function App() {
               if (typeof newValue === 'string') {
                 setQuery(newValue);
               } else if (newValue && newValue.inputValue) {
-                // Create a new value from the user input
-                setQuery(newValue);
+                setQuery(newValue.label);
               } else if (newValue != null){
                 setQuery(newValue.label);
               }
@@ -123,7 +122,7 @@ function App() {
               if (inputValue !== '' && !isExisting) {
                 filtered.push({
                   inputValue,
-                  label: `Add "${inputValue}"`,
+                  label: inputValue,
                 });
               }
 
