@@ -27,7 +27,7 @@ async function insertData(item) {
 }
 
 async function selectData() {
-  collection await dbConnect();
+  collection = await dbConnect();
   content = collection.find({});
   console.log(content)
   return content
