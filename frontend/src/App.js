@@ -96,7 +96,7 @@ function App() {
     })
     .then(response => response.json())
     .then(data => {
-      setIsLoadedtrue);
+      setIsLoaded(true);
       setContent(data);
     })
   }
