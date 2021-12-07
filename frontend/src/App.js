@@ -122,7 +122,7 @@ function App() {
               if (inputValue !== '' && !isExisting) {
                 filtered.push({
                   inputValue,
-                  label: inputValue,
+                  title: inputValue,
                 });
               }
 
