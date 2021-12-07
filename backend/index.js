@@ -28,8 +28,8 @@ async function insertData(item) {
 
 async function selectData() {
   collection = await dbConnect();
-  content = await collection.find({});
-  console.log(content);
+  content = collection.find({});
+  await content.forEach(console.dir);
   return content
 } 
 
