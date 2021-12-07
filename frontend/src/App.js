@@ -110,16 +110,16 @@ function App() {
             value={query}
             onChange={(event, newValue) => {
               if (typeof newValue === 'string') {
-                setValue({
+                setQuery({
                   title: newValue,
                 });
               } else if (newValue && newValue.inputValue) {
                 // Create a new value from the user input
-                setValue({
+                setQuery({
                   title: newValue.inputValue,
                 });
               } else {
-                setValue(newValue);
+                setQuery(newValue);
               }
             }}
 
