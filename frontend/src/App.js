@@ -89,8 +89,12 @@ function App() {
     })
   }
 
-  function handleChange(e) {
-    setQuery(e.target.value);
+  function handleChange(e, value) {
+    if(typeof value === 'string' || (value && value.inputValue)) {
+      setQuery({label: value});
+    } else {
+      setQuery(value);
+    }
   } 
 
   return (
