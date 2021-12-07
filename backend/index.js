@@ -39,14 +39,14 @@ app.use(bodyParser.urlencoded({ limit: '30mb', extended: true }));
 app.use(cors());
 
 app.get('/', function (req, res) {
-  content = await selectData();
+  content = selectData();
   res.json(content);
 });
 
 app.post('/', function (req, res) {
   let {query} = req.body;
   insertData({'query': query});
-  content = await selectData(;
+  content = selectData();
   res.json(content);
 });
 
