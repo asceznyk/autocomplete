@@ -14,7 +14,8 @@ import {
   CardContent,
   Container,
   Autocomplete,
-  TextField
+  TextField,
+  createFilterOptions
 } from '@mui/material';
 
 import './App.css';
@@ -22,6 +23,8 @@ import './App.css';
 import topMovies from './Movies.js'
 
 const Title = 'AutoComplete';
+
+const filter = createFilterOptions();
 
 function OutlinedCard(props) {
   return (
