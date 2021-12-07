@@ -74,6 +74,8 @@ function App() {
   function handleClick(e) {
     e.preventDefault();
 
+    console.log(query);
+
     fetch('http://35.222.117.4:5000', {
       method:'POST',
       headers: {
