@@ -108,11 +108,14 @@ function App() {
       <Header/>
       <Container> 
       <Box mt={1} mb={1}>
-        <Box mb={2}>
-          <ComboBox 
-          value={query} 
-          onInput={e => setQuery(e.target.value)} 
-          aria-describedby="helper-text"
+        <Box mb={2}> 
+          <Autocomplete
+            disablePortal
+            id="user-input"
+            options={topMovies}
+            renderInput={(params) => <TextField {...params} label="Movie"  />}
+            onInput={e => setQuery(e.target.value)}
+            value={query}
           />
         </Box>
         <Box mb={2}>
