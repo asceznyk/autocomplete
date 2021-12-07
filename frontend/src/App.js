@@ -111,8 +111,7 @@ function App() {
             disablePortal
             id="user-input"
             options={topMovies}
-            renderInput={(params) => 
-              <TextField {...params} label="Movie" onClick={e => setQuery(e.target.value)}}/>}
+            renderInput={(params) => <TextField {...params} label="Movie" onClick={e => setQuery(e.target.value)}}/>}
           />
         </Box>
         <Box mb={2}>
