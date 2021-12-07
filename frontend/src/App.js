@@ -123,7 +123,7 @@ function App() {
               if (inputValue !== '' && !isExisting) {
                 filtered.push({
                   inputValue,
-                  title: `Add "${inputValue}"`,
+                  label: `Add "${inputValue}"`,
                 });
               }
 
