@@ -115,6 +115,7 @@ function App() {
             options={topMovies}
             renderOption={(props, option) => (
               <Box component="li" {...props} >{option.label} {option.year}</Box>)}
+            freeSolo
             renderInput={(params) => <TextField {...params} label="Movie"/>}
           />
         </Box>
