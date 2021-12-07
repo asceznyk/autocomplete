@@ -100,12 +100,16 @@ function App() {
       <Box mt={1} mb={1}>
         <Box mb={2}> 
           <Autocomplete
-            disablePortal
             id="user-input"
+            value={query}
+            onChange={ handleChange }
+            selectOnFocus
+            clearOnBlur
+            handleHomeEndKeys
             options={topMovies}
             renderOption={(props, option) => (
               <Box component="li" {...props} >{option.label} {option.year}</Box>)}
-            renderInput={(params) => <TextField {...params} onChange={ handleChange } label="Movie"/>}
+            renderInput={(params) => <TextField {...params} label="Movie"/>}
           />
         </Box>
         <Box mb={2}>
