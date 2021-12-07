@@ -20,7 +20,7 @@ async function dbConnect() {
 
 async function insertData(item) {
   collection = await dbConnect();
-  result = await collection.insert(item);
+  result = await collection.insertOne(item);
   if(result.acknowledged) {
     console.log('data is inserted!');
   }
@@ -28,8 +28,7 @@ async function insertData(item) {
 
 async function selectData() {
   collection = await dbConnect();
-  content = collection.find({});
-  console.log(content)
+  content = await collection.find({});
   return content
 } 
 
