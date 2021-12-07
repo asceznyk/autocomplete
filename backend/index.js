@@ -29,6 +29,7 @@ async function insertData(item) {
 async function selectData() {
   collection = await dbConnect();
   content = await collection.find({});
+  console.log(content);
   return content
 } 
 
@@ -38,14 +39,14 @@ app.use(bodyParser.urlencoded({ limit: '30mb', extended: true }));
 app.use(cors());
 
 app.get('/', function (req, res) {
-  content = selectData();
+  content = await selectData();
   res.json(content);
 });
 
 app.post('/', function (req, res) {
   let {query} = req.body;
   insertData({'query': query});
-  content = selectData();
+  content = await selectData(;
   res.json(content);
 });
 
