@@ -86,8 +86,6 @@ function App() {
   function handleClick(e) {
     e.preventDefault();
 
-    console.log('clicked!')
-
     fetch('http://35.222.117.4:5000', {
       method:'POST',
       headers: {
@@ -98,7 +96,7 @@ function App() {
     })
     .then(response => response.json())
     .then(data => {
-      setIsLoaded(true);
+      setIsLoadedtrue);
       setContent(data);
     })
   }
@@ -114,7 +112,7 @@ function App() {
             id="user-input"
             options={topMovies}
             renderInput={(params) => 
-              <TextField {...params} label="Movie" onClick={{e => setQuery(e.target.value)}}/>}
+              <TextField {...params} label="Movie" onClick={e => setQuery(e.target.value)}}/>}
           />
         </Box>
         <Box mb={2}>
