@@ -115,7 +115,6 @@ function App() {
             options={topMovies}
             renderInput={(params) => <TextField {...params} label="Movie"  />}
             onInput={e => setQuery(e.target.value)}
-            value={query}
           />
         </Box>
         <Box mb={2}>
