@@ -99,7 +99,7 @@ function App() {
             disablePortal
             id="user-input"
             options={topMovies}
-            renderOptions={(props, option) => (
+            renderOption={(props, option) => (
               <Box component="li" onClick={e => setQuery(e.target.value)}>{option.label.toUpperCase()} {option.year}</Box>
             )}
             renderInput={(params) => <TextField {...params} onChange={e => setQuery(e.target.value)} label="Movie"/>}
