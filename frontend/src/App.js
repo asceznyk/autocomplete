@@ -61,18 +61,6 @@ function Header() {
   );
 }
 
-function ComboBox() {
-  return (
-    <Autocomplete
-      disablePortal
-      id="combo-box-demo"
-      options={topMovies}
-      sx={{ width: 300 }}
-      renderInput={(params) => <TextField {...params} label="Movie" />}
-    />
-  );
-}
-
 function App() { 
   const [error, setError] = useState(null);
   const [isLoaded, setIsLoaded] = useState(false);
@@ -111,7 +99,7 @@ function App() {
             disablePortal
             id="user-input"
             options={topMovies}
-            renderInput={(params) => <TextField {...params} onInput={e => setQuery(e.target.value)} label="Movie"/>}
+            renderInput={(params) => <Input {...params} onInput={e => setQuery(e.target.value)} label="Movie"/>}
           />
         </Box>
         <Box mb={2}>
