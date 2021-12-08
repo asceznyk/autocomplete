@@ -108,7 +108,7 @@ function App() {
 
   useEffect(() => {
     handleLoad();
-  });
+  }, []);
 
   return (
     <div className="App">
