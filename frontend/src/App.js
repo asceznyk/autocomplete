@@ -87,6 +87,8 @@ function App() {
       setIsLoaded(true);
       setContent(data);
     })
+
+    console.log(content);
   }
 
   return (
