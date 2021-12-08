@@ -8,8 +8,8 @@
   margin: auto;
 }
 
-.MuiBox-root {
-  box-shadow:1px 3px 3px solid;
+.MuiCard-root {
+  box-shadow:1px 3px 3px;
 }
 
 
