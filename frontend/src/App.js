@@ -28,7 +28,7 @@ const filter = createFilterOptions();
 
 function OutlinedCard(props) {
   return (
-    <Box sx={{ minWidth: 275 }}>
+    <Box sx={{ minWidth: 275 }} mb={1} mt={1}>
     <Card variant="outlined">
       <CardContent>
         <Typography sx={{ fontSize: 14 }} color="text.secondary" gutterBottom>
