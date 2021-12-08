@@ -46,10 +46,10 @@ app.get('/', async (req, res) => {
   res.json(content);
 });
 
-app.post('/', function (req, res) {
+app.post('/', async (req, res) => {
   let {query} = req.body;
   insertData({'query': query});
-  selectData().then((res) => {content=res});
+  content = await selectData();
   res.json(content);
 });
 
