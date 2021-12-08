@@ -43,6 +43,7 @@ app.use(cors());
 
 app.get('/', async (req, res) => { 
   content = await selectData();
+  console.dir(content);
   res.json(content);
 });
 
@@ -50,6 +51,7 @@ app.post('/', async (req, res) => {
   let {query} = req.body;
   insertData({'query': query});
   content = await selectData();
+  console.dir(content);
   res.json(content);
 });
 

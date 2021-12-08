@@ -117,10 +117,7 @@ function App() {
               // Suggest the creation of a new value
               const isExisting = options.some((option) => inputValue === option.label);
               if (inputValue !== '' && !isExisting) {
-                filtered.push({
-                  inputValue,
-                  label: inputValue,
-                });
+                filtered.push(inputValue);
               }
 
               return filtered;
