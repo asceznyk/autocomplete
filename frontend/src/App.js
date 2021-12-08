@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 
 import {  
   Button, 
@@ -108,8 +108,11 @@ function App() {
     })
   }
 
+  useEffect((e) => {
+    handleLoad(e);
+  });
+
   return (
-    {handleLoad}
     <div className="App">
       <Header/>
       <Container> 
