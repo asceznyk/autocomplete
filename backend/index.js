@@ -50,7 +50,6 @@ app.post('/', function (req, res) {
   let {query} = req.body;
   insertData({'query': query});
   selectData().then((res) => {content=res});
-  console.dir(content)
   res.json(content);
 });
 

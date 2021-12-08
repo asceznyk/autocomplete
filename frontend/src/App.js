@@ -68,16 +68,11 @@ function App() {
   const [error, setError] = useState(null);
   const [isLoaded, setIsLoaded] = useState(false);
   const [query, setQuery] = useState('');
-  const [content, setContent] = useState({
-    header:'',
-    body:'',
-  });
+  const [content, setContent] = useState(null);
 
 
   function handleClick(e) {
     e.preventDefault();
-
-    console.log(query);
 
     fetch('http://35.193.28.105:5000', {
       method:'POST',
@@ -154,8 +149,12 @@ function App() {
         <Box mb={2}>
           <Button variant="outlined" id="search-movie" onClick={ handleClick }>Search</Button>
         </Box>
-      </Box>
-      <OutlinedCard header= {content.header} body = {content.body} />
+      </Box> 
+      {
+        for(let row of content) {
+          <OutlinedCard header= {row.query} body = {row.query} />
+        }
+      }
       </Container>
     </div>
   );  
