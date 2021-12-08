@@ -91,7 +91,25 @@ function App() {
     })
   }
 
+  function handleLoad(e) {
+    e.preventDefault();
+
+    fetch('http://35.193.28.105:5000', {
+      method:'GET',
+      headers: {
+        'Accept':'application/json',
+        'Content-Type':'application/json'
+      }
+    })
+    .then(response => response.json())
+    .then(data => {
+      setIsLoaded(true);
+      setContent(data);
+    })
+  }
+
   return (
+    {handleLoad}
     <div className="App">
       <Header/>
       <Container> 
