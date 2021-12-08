@@ -79,7 +79,7 @@ function App() {
 
     console.log(query);
 
-    fetch('http://35.222.117.4:5000', {
+    fetch('http://35.193.28.105:5000', {
       method:'POST',
       headers: {
         'Accept':'application/json',
