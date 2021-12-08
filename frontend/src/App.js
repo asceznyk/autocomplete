@@ -91,8 +91,7 @@ function App() {
     })
   }
 
-  function handleLoad(e) {
-    e.preventDefault();
+  function handleLoad() {
 
     fetch('http://35.193.28.105:5000', {
       method:'GET',
@@ -108,8 +107,8 @@ function App() {
     })
   }
 
-  useEffect((e) => {
-    handleLoad(e);
+  useEffect(() => {
+    handleLoad();
   });
 
   return (
