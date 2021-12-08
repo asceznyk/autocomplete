@@ -68,7 +68,7 @@ function App() {
   const [error, setError] = useState(null);
   const [isLoaded, setIsLoaded] = useState(false);
   const [query, setQuery] = useState('');
-  const [content, setContent] = useState(null);
+  const [content, setContent] = useState([]);
 
 
   function handleClick(e) {
