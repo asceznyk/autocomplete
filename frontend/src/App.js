@@ -152,6 +152,7 @@ function App() {
       </Box> 
       {() => {
         for(let row of content) {
+          console.log(row);
           <OutlinedCard header= {row.query} body = {row.query} />
         }
       }}
