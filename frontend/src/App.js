@@ -92,7 +92,6 @@ function App() {
   }
 
   function handleLoad() {
-
     fetch('http://35.193.28.105:5000', {
       method:'GET',
       headers: {
@@ -173,7 +172,6 @@ function App() {
         </Box>
       </Box> 
       {content.map((row, index) => (
-        console.log(index, row.query),
         <OutlinedCard key={index} header= {row.query} body = {row.query} />
       ))}
       </Container>
