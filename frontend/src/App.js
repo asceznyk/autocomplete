@@ -153,7 +153,7 @@ function App() {
         </Box>
       </Box> 
       {content.map((row, index) => {
-        console.log(index, row);
+        console.log(index, row.query);
         <OutlinedCard header= {row.query} body = {row.query} />
       })}
       </Container>
