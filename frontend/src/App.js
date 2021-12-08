@@ -74,6 +74,8 @@ function App() {
   function handleClick(e) {
     e.preventDefault();
 
+    console.log(query);
+
     fetch('http://35.193.28.105:5000', {
       method:'POST',
       headers: {
@@ -87,8 +89,6 @@ function App() {
       setIsLoaded(true);
       setContent(data);
     })
-
-    console.log(content);
   }
 
   return (
@@ -104,6 +104,7 @@ function App() {
               if (typeof newValue === 'string') {
                 setQuery(newValue);
               } else if (newValue && newValue.inputValue) {
+                console.log(newValue);
                 setQuery(newValue.label);
               } else if (newValue != null){
                 setQuery(newValue.label);
@@ -117,7 +118,9 @@ function App() {
               // Suggest the creation of a new value
               const isExisting = options.some((option) => inputValue === option.label);
               if (inputValue !== '' && !isExisting) {
-                filtered.push(inputValue);
+                filtered.push({
+                  label: inputValue
+                });
               }
 
               return filtered;
