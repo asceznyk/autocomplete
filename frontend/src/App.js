@@ -150,11 +150,11 @@ function App() {
           <Button variant="outlined" id="search-movie" onClick={ handleClick }>Search</Button>
         </Box>
       </Box> 
-      {
+      {() => {
         for(let row of content) {
           <OutlinedCard header= {row.query} body = {row.query} />
         }
-      }
+      }}
       </Container>
     </div>
   );  
