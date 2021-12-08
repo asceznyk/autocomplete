@@ -152,12 +152,9 @@ function App() {
           <Button variant="outlined" id="search-movie" onClick={ handleClick }>Search</Button>
         </Box>
       </Box> 
-      {() => {
-        for(let row of content) {
-          console.log(row);
-          <OutlinedCard header= {row.query} body = {row.query} />
-        }
-      }}
+      {content.map((row, index) => {
+        <OutlinedCard header= {row.query} body = {row.query} />
+      })}
       </Container>
     </div>
   );  
