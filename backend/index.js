@@ -18,10 +18,11 @@ async function dbConnect() {
   return db.collection('user_queries');
 }
 
-collection = dbConnect();
+(async () => {
+  collection = await dbConnect();
+})();
 
 async function insertData(item) {
-  //collection = await dbConnect();
   result = await collection.insertOne(item);
   if(result.acknowledged) {
     console.log('data is inserted!');
