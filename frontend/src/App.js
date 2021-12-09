@@ -26,7 +26,20 @@ const Title = 'AutoComplete';
 
 const filter = createFilterOptions();
 
+
+function postReq(url, body, successFunc) {
+  fetch(url, {
+    method:'post',
+    headers: headers,
+    body: json.stringify(body)
+  })
+  .then(response => response.json())
+  .then(successFunc);
+}
+
 function OutlinedCard(props) {
+  const [id, setID] = useState('');
+
   return (
     <Box sx={{ minWidth: 275 }} mb={1} mt={1}>
     <Card variant="outlined">
@@ -45,7 +58,7 @@ function OutlinedCard(props) {
         </Typography>
       </CardContent>
       <CardActions>
-        <Button size="small" onClick={}>Learn More</Button>
+        <Button size="small" onClick={() => (setID(props.id), postReq())}>Delete</Button>
       </CardActions>
     </Card>
     </Box>
@@ -75,23 +88,12 @@ function App() {
         'Content-Type':'application/json'
       }
 
-  function postReq(url, body) {
-    fetch(url, {
-      method:'post',
-      headers: headers,
-      body: json.stringify(body)
-    })
-    .then(response => response.json())
-    .then(data => {
-      setisloaded(true);
-      setcontent(data);
-    });
-  }
-
   function addQuery(e) {
     e.preventDefault();
-    console.log(query);
-    postReq(endpoint+'/insert/', {'query': query});
+    postReq(endpoint+'/insert/', {'query': query}, (data) => {
+      setIsLoaded(true);
+      setContent(data);
+    });
   }
 
   function removeQuery(e) {
@@ -131,7 +133,6 @@ function App() {
               if (typeof newValue === 'string') {
                 setQuery(newValue);
               } else if (newValue && newValue.inputValue) {
-                console.log(newValue);
                 setQuery(newValue.label);
               } else if (newValue != null){
                 setQuery(newValue.label);
