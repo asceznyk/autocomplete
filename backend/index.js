@@ -57,7 +57,7 @@ app.get('/', async (req, res) => {
 
 app.post('/insert/', async (req, res) => {
   let {query} = req.body;
-  insertData({'query': query});
+  await insertData({'query': query});
   content = await selectData();
   console.dir(content);
   res.json(content);
@@ -65,7 +65,7 @@ app.post('/insert/', async (req, res) => {
 
 app.post('/delete/', async (req, res) => {
   let {id} = req.body;
-  deleteData({'_id': new ObjectID(id)});
+  await deleteData({'_id': new ObjectID(id)});
   content = await selectData();
   console.dir(content)
   res.json(content);
