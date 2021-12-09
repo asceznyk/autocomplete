@@ -2,7 +2,7 @@ import express from 'express';
 import cors from 'cors';
 import bodyParser from 'body-parser';
 import mongoose from 'mongoose';
-import { MongoClient } from 'mongodb';
+import { MongoClient, ObjectID } from 'mongodb';
 
 const app = express();
 const port = process.env.PORT || 5000;
@@ -65,7 +65,7 @@ app.post('/insert/', async (req, res) => {
 app.post('/delete/', async (req, res) => {
   let {id} = req.body;
   console.log(id);
-  deleteData({'_id': id});
+  deleteData({'_id': new ObjectID(id)});
   content = await selectData();
   res.json(content);
 });
