@@ -170,7 +170,7 @@ function App() {
         </Box>
       </Box> 
       {content.map((row, index) => (
-        <OutlinedCard setData={setData} key={index} header={row.query} body={row.query} id={row._id}/>
+        <OutlinedCard key={index} header={row.query} body={row.query} id={row._id}/>
       ))}
       </Container>
     </div>
