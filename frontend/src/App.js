@@ -26,12 +26,16 @@ const Title = 'AutoComplete';
 
 const filter = createFilterOptions();
 
+ const headers = {
+        'Accept':'application/json',
+        'Content-Type':'application/json'
+      }
 
 function postReq(url, body, successFunc) {
   fetch(url, {
-    method:'post',
+    method:'POST',
     headers: headers,
-    body: json.stringify(body)
+    body: JSON.stringify(body)
   })
   .then(response => response.json())
   .then(successFunc);
@@ -82,11 +86,7 @@ function App() {
   const [isLoaded, setIsLoaded] = useState(false);
   const [query, setQuery] = useState('');
   const [content, setContent] = useState([]);
-  const endpoint = 'http://34.68.250.189:5000'
-  const headers = {
-        'Accept':'application/json',
-        'Content-Type':'application/json'
-      }
+  const endpoint = 'http://34.68.250.189:5000' 
 
   function addQuery(e) {
     e.preventDefault();
@@ -94,11 +94,6 @@ function App() {
       setIsLoaded(true);
       setContent(data);
     });
-  }
-
-  function removeQuery(e) {
-    e.preventDefault();
-    postReq(endpoint+'/delete/', {'id': id});
   }
 
   function loadData() {
