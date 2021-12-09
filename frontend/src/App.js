@@ -54,7 +54,7 @@ function getReq(url, successFunc) {
 
 function OutlinedCard(props) {
   function triggerSetData(data) {
-    this.app.setData(data);
+    App.setData(data);
   }
 
   return (
@@ -75,7 +75,6 @@ function OutlinedCard(props) {
         </Typography>
       </CardContent>
       <CardActions>
-        <App ref={app => this.app = app}/>
         <Button size="small" onClick={() => (postReq(endpoint+'/delete/', {'id':props.id}, triggerSetData))}>Delete</Button>
       </CardActions>
     </Card>
