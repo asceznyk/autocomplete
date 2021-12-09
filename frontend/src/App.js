@@ -22,14 +22,14 @@ import './App.css';
 
 import topMovies from './Movies.js'
 
-const Title = 'AutoComplete';
+export const Title = 'AutoComplete';
 
 const filter = createFilterOptions();
 
- const headers = {
-        'Accept':'application/json',
-        'Content-Type':'application/json'
-      }
+const headers = {
+      'Accept':'application/json',
+      'Content-Type':'application/json'
+    }
 
 const endpoint = 'http://34.68.250.189:5000' 
 
@@ -90,7 +90,7 @@ function Header() {
   );
 }
 
-function App() { 
+export default function App() { 
   const [error, setError] = useState(null);
   const [isLoaded, setIsLoaded] = useState(false);
   const [query, setQuery] = useState('');
@@ -177,5 +177,3 @@ function App() {
   );  
 }
 
-export default App;
-export {Title}
