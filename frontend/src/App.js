@@ -53,10 +53,6 @@ function getReq(url, successFunc) {
 } 
 
 function OutlinedCard(props) {
-  function triggerSetData(data) {
-    App.setData(data);
-  }
-
   return (
     <Box sx={{ minWidth: 275 }} mb={1} mt={1}>
     <Card variant="outlined">
@@ -75,7 +71,7 @@ function OutlinedCard(props) {
         </Typography>
       </CardContent>
       <CardActions>
-        <Button size="small" onClick={() => (postReq(endpoint+'/delete/', {'id':props.id}, triggerSetData))}>Delete</Button>
+        <Button size="small" onClick={() => (postReq(endpoint+'/delete/', {'id':props.id}, props.setData))}>Delete</Button>
       </CardActions>
     </Card>
     </Box>
@@ -174,7 +170,7 @@ function App() {
         </Box>
       </Box> 
       {content.map((row, index) => (
-        <OutlinedCard key={index} header={row.query} body={row.query} id={row._id}/>
+        <OutlinedCard setData={setData} key={index} header={row.query} body={row.query} id={row._id}/>
       ))}
       </Container>
     </div>
