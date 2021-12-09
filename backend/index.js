@@ -18,8 +18,10 @@ async function dbConnect() {
   return db.collection('user_queries');
 }
 
+collection = dbConnect();
+
 async function insertData(item) {
-  collection = await dbConnect();
+  //collection = await dbConnect();
   result = await collection.insertOne(item);
   if(result.acknowledged) {
     console.log('data is inserted!');
@@ -27,14 +29,13 @@ async function insertData(item) {
 }
 
 async function selectData() {
-  collection = await dbConnect();
   content = collection.find({});
   let rows = [];
   await content.forEach((row) => {
     rows.push(row);
   });
   return rows;
-} 
+}
 
 app.use(express.json());
 app.use(bodyParser.json({ limit: '30mb', extended: true }));
