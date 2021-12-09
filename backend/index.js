@@ -37,7 +37,7 @@ async function deleteData(id) {
 }
 
 async function selectData() {
-  content = collection.find({}).sort({date: -1});
+  content = collection.find({});
   let rows = [];
   await content.forEach((row) => {
     rows.push(row);
