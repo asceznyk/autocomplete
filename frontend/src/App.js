@@ -166,7 +166,7 @@ function App() {
           />
         </Box>
         <Box mb={2}>
-          <Button variant="outlined" id="search-movie" onClick={ addQuery }>Search</Button>
+          <Button variant="outlined" id="search-movie" onClick={ addQuery }>Add</Button>
         </Box>
       </Box> 
       {content.map((row, index) => (
