@@ -73,7 +73,7 @@ function OutlinedCard(props) {
         </Typography>
       </CardContent>
       <CardActions>
-        <Button size="small" onClick={() => (setID(props.id), postReq(endpoint+'/delete/', {'id':id}, ()=>{}))}>Delete</Button>
+        <Button size="small" onClick={() => (postReq(endpoint+'/delete/', {'id':props.id}, ()=>{}))}>Delete</Button>
       </CardActions>
     </Card>
     </Box>
