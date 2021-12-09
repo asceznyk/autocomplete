@@ -29,6 +29,13 @@ async function insertData(item) {
   }
 }
 
+async function deleteData(id) {
+  result = await collection.deleteOne(id);
+  if(result.acknowledged) {
+    console.log('data is deleted!')
+  }
+}
+
 async function selectData() {
   content = collection.find({});
   let rows = [];
@@ -48,12 +55,20 @@ app.get('/', async (req, res) => {
   res.json(content);
 });
 
-app.post('/', async (req, res) => {
+app.post('/insert/', async (req, res) => {
   let {query} = req.body;
   insertData({'query': query});
   content = await selectData();
   res.json(content);
 });
+
+app.post('/delete/', async (req, res) => {
+  let {id} = req.body;
+  deleteData({_id:id});
+  content = await selectData();
+  res.json(content);
+});
+
 
 mongoose.connect(url).then(
   () => app.listen(port, 

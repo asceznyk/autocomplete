@@ -77,7 +77,7 @@ function App() {
 
     console.log(query);
 
-    fetch(endpoint, {
+    fetch(endpoint+'/insert/', {
       method:'POST',
       headers: {
         'Accept':'application/json',
