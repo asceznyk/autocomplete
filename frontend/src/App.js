@@ -45,7 +45,7 @@ function OutlinedCard(props) {
         </Typography>
       </CardContent>
       <CardActions>
-        <Button size="small">Learn More</Button>
+        <Button size="small" onClick={}>Learn More</Button>
       </CardActions>
     </Card>
     </Box>
@@ -70,29 +70,36 @@ function App() {
   const [query, setQuery] = useState('');
   const [content, setContent] = useState([]);
   const endpoint = 'http://34.68.250.189:5000'
-
-
-  function handleClick(e) {
-    e.preventDefault();
-
-    console.log(query);
-
-    fetch(endpoint+'/insert/', {
-      method:'POST',
-      headers: {
+  const headers = {
         'Accept':'application/json',
         'Content-Type':'application/json'
-      },
-      body: JSON.stringify({'query': query})
+      }
+
+  function postReq(url, body) {
+    fetch(url, {
+      method:'post',
+      headers: headers,
+      body: json.stringify(body)
     })
     .then(response => response.json())
     .then(data => {
-      setIsLoaded(true);
-      setContent(data);
-    })
+      setisloaded(true);
+      setcontent(data);
+    });
   }
 
-  function handleLoad() {
+  function addQuery(e) {
+    e.preventDefault();
+    console.log(query);
+    postReq(endpoint+'/insert/', {'query': query});
+  }
+
+  function removeQuery(e) {
+    e.preventDefault();
+    postReq(endpoint+'/delete/', {'id': id});
+  }
+
+  function loadData() {
     fetch(endpoint, {
       method:'GET',
       headers: {
@@ -108,7 +115,7 @@ function App() {
   }
 
   useEffect(() => {
-    handleLoad();
+    loadData();
   }, []);
 
   return (
@@ -151,15 +158,14 @@ function App() {
             handleHomeEndKeys
             options={topMovies}
             getOptionLabel={(option) => {
-              // Value selected with enter, right from the input
               if (typeof option === 'string') {
                 return option;
               }
-              // Add "xxx" option created dynamically
+
               if (option.inputValue) {
                 return option.inputValue;
               }
-              // Regular option
+
               return option.label;
             }}
             renderOption={(props, option) => (
@@ -169,11 +175,11 @@ function App() {
           />
         </Box>
         <Box mb={2}>
-          <Button variant="outlined" id="search-movie" onClick={ handleClick }>Search</Button>
+          <Button variant="outlined" id="search-movie" onClick={ addQuery }>Search</Button>
         </Box>
       </Box> 
       {content.map((row, index) => (
-        <OutlinedCard key={index} header= {row.query} body = {row.query} />
+        <OutlinedCard key={index} header={row.query} body={row.query} id={row._id}/>
       ))}
       </Container>
     </div>
