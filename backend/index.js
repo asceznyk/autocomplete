@@ -64,7 +64,7 @@ app.post('/insert/', async (req, res) => {
 
 app.post('/delete/', async (req, res) => {
   let {id} = req.body;
-  deleteData({_id: ObjectId(id)});
+  deleteData({'_id': id});
   content = await selectData();
   res.json(content);
 });
