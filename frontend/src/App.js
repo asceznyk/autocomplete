@@ -31,6 +31,8 @@ const filter = createFilterOptions();
         'Content-Type':'application/json'
       }
 
+const endpoint = 'http://34.68.250.189:5000' 
+
 function postReq(url, body, successFunc) {
   fetch(url, {
     method:'POST',
@@ -40,6 +42,15 @@ function postReq(url, body, successFunc) {
   .then(response => response.json())
   .then(successFunc);
 }
+
+function getReq(url, successFunc) {
+  fetch(url, {
+    method:'GET',
+    headers: headers
+  })
+  .then(response => response.json())
+  .then(successFunc)
+} 
 
 function OutlinedCard(props) {
   const [id, setID] = useState('');
@@ -62,7 +73,7 @@ function OutlinedCard(props) {
         </Typography>
       </CardContent>
       <CardActions>
-        <Button size="small" onClick={() => (setID(props.id), postReq())}>Delete</Button>
+        <Button size="small" onClick={() => (setID(props.id), postReq(endpoint+'/delete/', {'id':id}, ()=>{}))}>Delete</Button>
       </CardActions>
     </Card>
     </Box>
@@ -86,33 +97,19 @@ function App() {
   const [isLoaded, setIsLoaded] = useState(false);
   const [query, setQuery] = useState('');
   const [content, setContent] = useState([]);
-  const endpoint = 'http://34.68.250.189:5000' 
+
+  function setData(data) {
+    setIsLoaded(true);
+    setContent(data);
+  }
 
   function addQuery(e) {
     e.preventDefault();
-    postReq(endpoint+'/insert/', {'query': query}, (data) => {
-      setIsLoaded(true);
-      setContent(data);
-    });
-  }
-
-  function loadData() {
-    fetch(endpoint, {
-      method:'GET',
-      headers: {
-        'Accept':'application/json',
-        'Content-Type':'application/json'
-      }
-    })
-    .then(response => response.json())
-    .then(data => {
-      setIsLoaded(true);
-      setContent(data);
-    })
+    postReq(endpoint+'/insert/', {'query': query}, setData);
   }
 
   useEffect(() => {
-    loadData();
+    getReq(endpoint, setData);
   }, []);
 
   return (
