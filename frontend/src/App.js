@@ -69,6 +69,7 @@ function App() {
   const [isLoaded, setIsLoaded] = useState(false);
   const [query, setQuery] = useState('');
   const [content, setContent] = useState([]);
+  const endpoint = 'http://34.68.250.189:5000'
 
 
   function handleClick(e) {
@@ -76,7 +77,7 @@ function App() {
 
     console.log(query);
 
-    fetch('http://35.193.28.105:5000', {
+    fetch(endpoint, {
       method:'POST',
       headers: {
         'Accept':'application/json',
@@ -92,7 +93,7 @@ function App() {
   }
 
   function handleLoad() {
-    fetch('http://35.193.28.105:5000', {
+    fetch(endpoint, {
       method:'GET',
       headers: {
         'Accept':'application/json',
