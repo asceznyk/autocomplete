@@ -63,7 +63,7 @@ function Header() {
       bgcolor: 'background',
       color: 'text'
     }}>
-      <AppBar position="fixed" color="transparent">
+      <AppBar position="fixed" color="inherit">
       <Toolbar>
         <Typography variant="h6" component="div" sx={{ flexGrow: 1 }}>{ Title }</Typography>
       </Toolbar>
