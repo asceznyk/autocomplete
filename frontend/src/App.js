@@ -16,7 +16,7 @@ import {
   TextField,
   createFilterOptions
 } from '@mui/material';
-import { createTheme, ThemeProvider } from '@mui/system;
+import { createTheme, ThemeProvider } from '@mui/system';
 import topMovies from './Movies.js';
 
 import './App.css';
