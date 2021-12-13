@@ -16,7 +16,7 @@ import {
   TextField,
   createFilterOptions
 } from '@mui/material';
-//import { createTheme, ThemeProvider } from '@mui/system';
+import { createTheme, ThemeProvider } from '@mui/material/styles';
 import topMovies from './Movies.js';
 
 import './App.css';
@@ -32,12 +32,12 @@ const headers = {
 
 const endpoint = 'http://34.122.100.254:5000';
 
-/*const theme = createTheme({
+const theme = createTheme({
   palette: {
     background: '#2e3aff',
     text: '#ff0',
   }
-})*/
+})
 
 function postReq(url, body, successFunc) {
   fetch(url, {
@@ -60,8 +60,11 @@ function getReq(url, successFunc) {
 
 function Header() {
   return (
+    <ThemeProvider theme={theme}>
     <Box sx={{ 
-      flexGrow: 1
+      flexGrow: 1,
+      bgcolor: 'background',
+      color: 'text'
     }}>
       <AppBar position="fixed" color="transparent">
       <Toolbar>
@@ -69,6 +72,7 @@ function Header() {
       </Toolbar>
       </AppBar>
     </Box>
+    </ThemeProvider>
   );
 }
 
