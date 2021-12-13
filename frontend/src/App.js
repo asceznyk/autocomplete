@@ -31,7 +31,7 @@ const headers = {
       'Content-Type':'application/json'
     }
 
-const endpoint = 'http://34.68.250.189:5000' 
+const endpoint = 'http://34.122.100.254:5000' 
 
 function postReq(url, body, successFunc) {
   fetch(url, {
