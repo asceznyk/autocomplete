@@ -1,5 +1,4 @@
 import React, { useState, useEffect } from 'react';
-
 import {  
   Button, 
   FormControl, 
@@ -17,21 +16,28 @@ import {
   TextField,
   createFilterOptions
 } from '@mui/material';
+import { createTheme, ThemeProvider } from '@mui/system;
+import topMovies from './Movies.js';
 
 import './App.css';
-
-import topMovies from './Movies.js'
 
 export const Title = 'AutoComplete';
 
 const filter = createFilterOptions();
 
 const headers = {
-      'Accept':'application/json',
-      'Content-Type':'application/json'
-    }
+  'Accept':'application/json',
+  'Content-Type':'application/json'
+}
 
 const endpoint = 'http://34.122.100.254:5000' 
+
+const theme = createTheme({
+  palette: {
+    background: '#2e3aff';
+    text: '#ff0';
+  }
+})
 
 function postReq(url, body, successFunc) {
   fetch(url, {
@@ -50,7 +56,26 @@ function getReq(url, successFunc) {
   })
   .then(response => response.json())
   .then(successFunc)
-} 
+}
+
+function Header() {
+  return (
+    <ThemeProvider theme={theme}>
+    <Box sx={{ 
+      flexGrow: 1,
+      boxShadow: 1,
+      bgcolor:'background',
+      color:'text'
+    }}>
+      <AppBar position="fixed" color="transparent">
+      <Toolbar>
+        <Typography variant="h6" component="div" sx={{ flexGrow: 1 }}>{ Title }</Typography>
+      </Toolbar>
+      </AppBar>
+    </Box>
+    </ThemeProvider>
+  );
+}
 
 function OutlinedCard(props) {
   return (
@@ -74,18 +99,6 @@ function OutlinedCard(props) {
         <Button size="small" onClick={() => (postReq(endpoint+'/delete/', {'id':props.id}, props.setData))}>Delete</Button>
       </CardActions>
     </Card>
-    </Box>
-  );
-}
-
-function Header() {
-  return (
-    <Box sx={{ flexGrow: 1 }}>
-      <AppBar position="fixed" color="transparent">
-      <Toolbar>
-        <Typography variant="h6" component="div" sx={{ flexGrow: 1 }}>{ Title }</Typography>
-      </Toolbar>
-      </AppBar>
     </Box>
   );
 }
