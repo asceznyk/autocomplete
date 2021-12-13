@@ -113,7 +113,7 @@ export default function App() {
   return (
     <div className="App">
       <Header/>
-      <Container> 
+      <Container mt={1}> 
       <Box mt={1} mb={1}>
         <Box mb={2}> 
           <Autocomplete
