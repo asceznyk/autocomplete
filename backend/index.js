@@ -2,7 +2,7 @@ import express from 'express';
 import cors from 'cors';
 import bodyParser from 'body-parser';
 import mongoose from 'mongoose';
-import { MongoClient, ObjectID, ISODate } from 'mongodb';
+import { MongoClient, ObjectID } from 'mongodb';
 
 const app = express();
 const port = process.env.PORT || 5000;
@@ -57,7 +57,7 @@ app.get('/', async (req, res) => {
 
 app.post('/insert/', async (req, res) => {
   let {query} = req.body;
-  await insertData({'query': query, 'created_at':ISODate()});
+  await insertData({'query': query, 'created_at':new Date()});
   content = await selectData();
   console.dir(content);
   res.json(content);
