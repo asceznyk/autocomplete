@@ -114,7 +114,7 @@ export default function App() {
     <div className="App">
       <Header/>
       <Container> 
-      <Box mt={2} mb={2}>
+      <Box mt={6} mb={2}>
         <Box mb={2}> 
           <Autocomplete
             id="user-input"
