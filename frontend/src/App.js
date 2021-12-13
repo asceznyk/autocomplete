@@ -34,8 +34,8 @@ const endpoint = 'http://34.122.100.254:5000'
 
 const theme = createTheme({
   palette: {
-    background: '#2e3aff';
-    text: '#ff0';
+    background: '#2e3aff',
+    text: '#ff0',
   }
 })
 
