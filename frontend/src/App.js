@@ -1,9 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import {  
-  Button, 
-  FormControl, 
-  InputLabel, 
-  Input,
+  Button,
   AppBar,
   Box, 
   Toolbar,
@@ -103,13 +100,10 @@ function OutlinedCard(props) {
 }
 
 export default function App() { 
-  const [error, setError] = useState(null);
-  const [isLoaded, setIsLoaded] = useState(false);
   const [query, setQuery] = useState('');
   const [content, setContent] = useState([]);
 
   function setData(data) {
-    setIsLoaded(true);
     setContent(data);
   }
 
