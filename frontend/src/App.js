@@ -32,9 +32,9 @@ const endpoint = 'http://35.226.106.148:5000';
 const theme = createTheme({
   palette: {
     background : {
-      default: '#004e64',
+      default: '#004e64'
     }
-  },
+  }
 })
 
 function postReq(url, body, successFunc) {
@@ -59,9 +59,7 @@ function getReq(url, successFunc) {
 function Header() {
   return (
     <ThemeProvider theme={theme}>
-    <Box sx={{ 
-      flexGrow: 1,
-    }}>
+      <Box sx={{ flexGrow: 1, bgcolor: 'background.default'}}>
       <AppBar position="fixed" color="inherit">
       <Toolbar>
         <Typography variant="h6" component="div" sx={{ flexGrow: 1 }}>{ Title }</Typography>
