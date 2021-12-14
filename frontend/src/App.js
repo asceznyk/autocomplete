@@ -169,11 +169,11 @@ export default function App() {
           />
         </Box>
         <Box mb={2}>
-          <Button color="primary" variant="outlined" id="search-movie" onClick={ addQuery }>Add</Button>
+          <Button variant="contained" id="search-movie" onClick={ addQuery }>Add</Button>
         </Box>
       </Box> 
       {content.map((row, index) => (
-        <OutlinedCard color="primary" setData={setData} key={index} header={row.query} body={row.query} id={row._id}/>
+        <OutlinedCard setData={setData} key={index} header={row.query} body={row.query} id={row._id}/>
       ))}
       </Container>
       </ThemeProvider>
