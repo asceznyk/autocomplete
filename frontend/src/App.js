@@ -57,17 +57,15 @@ function getReq(url, successFunc) {
   .then(successFunc)
 }
 
-function Header() {
+function Header(props) {
   return (
-    <ThemeProvider theme={theme}>
       <Box sx={{ flexGrow: 1}}>
-      <AppBar position="fixed" color="primary">
+      <AppBar position="fixed" color={props.color}>
       <Toolbar>
         <Typography variant="h6" component="div" sx={{ flexGrow: 1 }}>{ Title }</Typography>
       </Toolbar>
       </AppBar>
     </Box>
-    </ThemeProvider>
   );
 }
 
@@ -90,7 +88,7 @@ function OutlinedCard(props) {
         </Typography>
       </CardContent>
       <CardActions>
-        <Button size="small" onClick={() => (postReq(endpoint+'/delete/', {'id':props.id}, props.setData))}>Delete</Button>
+        <Button size="small" color={props.color} onClick={() => (postReq(endpoint+'/delete/', {'id':props.id}, props.setData))}>Delete</Button>
       </CardActions>
     </Card>
     </Box>
@@ -116,7 +114,8 @@ export default function App() {
 
   return (
     <div className="App">
-      <Header/>
+      <ThemeProvider theme={theme}>
+      <Header color="primary"/>
       <Container> 
       <Box mt={10} mb={2}>
         <Box mb={2}> 
@@ -170,13 +169,14 @@ export default function App() {
           />
         </Box>
         <Box mb={2}>
-          <Button variant="outlined" id="search-movie" onClick={ addQuery }>Add</Button>
+          <Button color="primary" variant="outlined" id="search-movie" onClick={ addQuery }>Add</Button>
         </Box>
       </Box> 
       {content.map((row, index) => (
-        <OutlinedCard setData={setData} key={index} header={row.query} body={row.query} id={row._id}/>
+        <OutlinedCard color="primary" setData={setData} key={index} header={row.query} body={row.query} id={row._id}/>
       ))}
       </Container>
+      </ThemeProvider>
     </div>
   );  
 }
