@@ -27,12 +27,17 @@ const headers = {
   'Content-Type':'application/json'
 }
 
-const endpoint = 'http://34.122.100.254:5000';
+const endpoint = 'http://35.226.106.148:5000';
 
 const theme = createTheme({
   palette: {
-    background: '#2e3aff',
-    text: '#fff',
+    header: {
+      background:'#004e64',
+      color:'#fff' 
+    }//,
+    /*card: {
+      
+    }*/
   }
 })
 
@@ -60,8 +65,8 @@ function Header() {
     <ThemeProvider theme={theme}>
     <Box sx={{ 
       flexGrow: 1,
-      bgcolor: 'background',
-      color: 'text'
+      bgcolor: 'header.background',
+      color: 'header.color'
     }}>
       <AppBar position="fixed" color="inherit">
       <Toolbar>
