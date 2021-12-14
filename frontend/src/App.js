@@ -31,12 +31,9 @@ const endpoint = 'http://35.226.106.148:5000';
 
 const theme = createTheme({
   palette: {
-    background: {
-      header:'#004e64',
-    },
-    text: {
-      header:'#fff',
-    },
+    primary : {
+      main: '#004e64',
+    }
   },
 })
 
@@ -64,8 +61,6 @@ function Header() {
     <ThemeProvider theme={theme}>
     <Box sx={{ 
       flexGrow: 1,
-      bgcolor: 'background.header',
-      color: 'text.header'
     }}>
       <AppBar position="fixed" color="inherit">
       <Toolbar>
