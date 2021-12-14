@@ -165,7 +165,7 @@ export default function App() {
               return option.label;
             }}
             renderOption={(props, option) => (
-              <Box {...props} >{option.label} <Chip mr={2} label={option.year} color="primary"/></Box>)}
+              <Box {...props} >{option.label} <Chip ml={2} label={option.year} color="primary"/></Box>)}
             freeSolo
             renderInput={(params) => <TextField {...params} label="Movie" color="secondary"/>}
           />
