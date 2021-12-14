@@ -165,7 +165,7 @@ export default function App() {
             renderOption={(props, option) => (
               <Box component="li" {...props} >{option.label} {option.year}</Box>)}
             freeSolo
-            renderInput={(params) => <TextField {...params} label="Movie"/>}
+            renderInput={(params) => <TextField {...params} color="text.primary" label="Movie"/>}
           />
         </Box>
         <Box mb={2}>
