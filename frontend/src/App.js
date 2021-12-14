@@ -34,6 +34,9 @@ const theme = createTheme({
     primary : {
       main: '#00A5CF',
       contrastText: '#fff'
+    },
+    text : {
+      secondary: '#9FFFCB'
     }
   }
 })
@@ -75,15 +78,12 @@ function OutlinedCard(props) {
     <Card variant="outlined">
       <CardContent>
         <Typography sx={{ fontSize: 14 }} color="text.secondary" gutterBottom>
-          Title Searched
+          Title
         </Typography>
         <Typography variant="h5" component="div">
           { props.header }
         </Typography>
-        <Typography sx={{ mb: 1.5 }} color="text.secondary">
-          Genre: action
-        </Typography>
-        <Typography variant="body2">
+        <Typography variant="body2" color="text.secondary">
           { props.body }
         </Typography>
       </CardContent>
