@@ -36,8 +36,8 @@ const theme = createTheme({
     },
     text: {
       header:'#fff',
-    }
-  }
+    },
+  },
 })
 
 function postReq(url, body, successFunc) {
