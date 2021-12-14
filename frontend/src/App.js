@@ -168,7 +168,7 @@ export default function App() {
             renderOption={(props, option) => (
               <Box {...props} ><Stack spacing={2} direction="row">
                 <Typography variant="body2">{option.label}</Typography> 
-                <Chip label={option.year} color="primary"/>
+                <Chip label={option.year} color="primary" size="small" variant="outlined"/>
               </Stack></Box>
             )}
             freeSolo
