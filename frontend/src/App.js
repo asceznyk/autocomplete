@@ -9,6 +9,7 @@ import {
   CardActions,
   CardContent,
   Chip,
+  Stack,
   Container,
   Autocomplete,
   TextField,
@@ -165,7 +166,11 @@ export default function App() {
               return option.label;
             }}
             renderOption={(props, option) => (
-              <Box {...props} ><Typography variant="body2">{option.label}</Typography> <Chip ml={2} label={option.year} color="primary"/></Box>)}
+              <Box {...props} ><Stack spacing={2}>
+                <Typography variant="body2">{option.label}</Typography> 
+                <Chip label={option.year} color="primary"/>
+              </Stack></Box>
+            )}
             freeSolo
             renderInput={(params) => <TextField {...params} label="Movie" color="secondary"/>}
           />
