@@ -11,6 +11,7 @@ import {
   Container,
   Autocomplete,
   TextField,
+  CssBaseline,
   createFilterOptions
 } from '@mui/material';
 import { createTheme, ThemeProvider } from '@mui/material/styles';
@@ -59,6 +60,7 @@ function getReq(url, successFunc) {
 function Header() {
   return (
     <ThemeProvider theme={theme}>
+      <CssBaseline/>
       <Box sx={{ flexGrow: 1, bgcolor: 'background.default'}}>
       <AppBar position="fixed" color="inherit">
       <Toolbar>
