@@ -32,10 +32,10 @@ const endpoint = 'http://35.226.106.148:5000';
 const theme = createTheme({
   palette: {
     background: {
-      header:'#004e64'
+      header:'#004e64',
     },
     text: {
-      header:'#fff'
+      header:'#fff',
     }
   }
 })
