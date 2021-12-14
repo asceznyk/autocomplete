@@ -123,6 +123,7 @@ const topMovies = [
   { label: 'Snatch', year: 2000 },
   { label: '3 Idiots', year: 2009 },
   { label: 'Monty Python and the Holy Grail', year: 1975 },
+  { label: 'The Wolf of Wallstreet', year: 2013 }
 ];
 
 export default topMovies;
