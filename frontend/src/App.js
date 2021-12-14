@@ -36,6 +36,7 @@ const theme = createTheme({
       contrastText: '#fff'
     },
     text : {
+      primary: '#000',
       secondary: '#25A18E'
     }
   }
@@ -165,7 +166,7 @@ export default function App() {
             renderOption={(props, option) => (
               <Box component="li" {...props} >{option.label} {option.year}</Box>)}
             freeSolo
-            renderInput={(params) => <TextField {...params} label="Movie" color="secondary"/>}
+            renderInput={(params) => <TextField {...params} label="Movie" color="primary"/>}
           />
         </Box>
         <Box mb={2}>
