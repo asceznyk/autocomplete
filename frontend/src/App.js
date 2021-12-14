@@ -11,7 +11,6 @@ import {
   Container,
   Autocomplete,
   TextField,
-  CssBaseline,
   createFilterOptions
 } from '@mui/material';
 import { createTheme, ThemeProvider } from '@mui/material/styles';
@@ -33,7 +32,8 @@ const endpoint = 'http://35.226.106.148:5000';
 const theme = createTheme({
   palette: {
     primary : {
-      main: '#00A5CF'
+      main: '#00A5CF',
+      contrastText: '#fff'
     }
   }
 })
