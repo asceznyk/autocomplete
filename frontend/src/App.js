@@ -143,7 +143,8 @@ export default function App() {
               const isExisting = options.some((option) => inputValue === option.label);
               if (inputValue !== '' && !isExisting) {
                 filtered.push({
-                  label: inputValue
+                  label: inputValue, 
+                  year: 2021
                 });
               }
 
