@@ -166,7 +166,7 @@ export default function App() {
               return option.label;
             }}
             renderOption={(props, option) => (
-              <Box {...props} ><Stack spacing={2}>
+              <Box {...props} ><Stack spacing={2} direction="row">
                 <Typography variant="body2">{option.label}</Typography> 
                 <Chip label={option.year} color="primary"/>
               </Stack></Box>
