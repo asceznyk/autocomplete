@@ -105,9 +105,9 @@ function FormatType(props) {
     return (
       <OutlinedCard setData={content.func} key={content.key} header={content.header} body={content.body} id={content.id}/>
     )
-  } else {
+  } else if (type === 'paper'){
     return (
-      <Paper/>
+      <Paper>{content.header}<Paper/>
     )
   }
 }
