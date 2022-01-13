@@ -98,6 +98,18 @@ function OutlinedCard(props) {
   );
 }
 
+/*function FormatType(props) {
+  return (
+    {
+      () => {
+        if(props.type == 'card') {
+          return (<OutlinedCard />)
+        }
+      } 
+    }
+  );
+}*/
+
 export default function App() { 
   const [query, setQuery] = useState('');
   const [content, setContent] = useState([]);
@@ -178,9 +190,13 @@ export default function App() {
           <Button variant="contained" id="search-movie" onClick={ addQuery }>Add</Button>
         </Box>
       </Box>
-      {content.map((row, index) => (
-        <OutlinedCard setData={setData} key={index} header={row.query} body={row.query} id={row._id}/>
-      ))}
+      {content.map((row, index) => {
+        if(index == 0) {
+          return (<OutlinedCard setData={setData} key={index} header={row.query} body={row.query} id={row._id}/>)
+        } else {
+          return (<OutlinedCard setData={setData} key={index} header={row.query} body={row.query} id={row._id}/>);
+        }
+      })}
       </Container>
       </ThemeProvider>
     </div>
