@@ -42,6 +42,7 @@ async function selectData() {
   await content.forEach((row) => {
     rows.push(row);
   });
+  rows.unshift({''})
   return rows;
 }
 

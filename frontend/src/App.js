@@ -29,7 +29,7 @@ const headers = {
   'Content-Type':'application/json'
 }
 
-const endpoint = 'http://35.226.106.148:5000';
+const endpoint = 'http://104.154.131.224:5000';
 
 const theme = createTheme({
   palette: {
@@ -177,7 +177,7 @@ export default function App() {
         <Box mb={2}>
           <Button variant="contained" id="search-movie" onClick={ addQuery }>Add</Button>
         </Box>
-      </Box> 
+      </Box>
       {content.map((row, index) => (
         <OutlinedCard setData={setData} key={index} header={row.query} body={row.query} id={row._id}/>
       ))}
