@@ -107,7 +107,7 @@ function FormatType(props) {
     )
   } else if (type === 'paper'){
     return (
-      <Paper>{content.header}<Paper/>
+      <Paper>{content.header}</Paper>
     )
   }
 }
