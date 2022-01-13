@@ -5,6 +5,7 @@ import {
   Box, 
   Toolbar,
   Typography,
+  Paper,
   Card,
   CardActions,
   CardContent,
@@ -98,17 +99,17 @@ function OutlinedCard(props) {
   );
 }
 
-/*function FormatType(props) {
-  return (
-    {
-      () => {
-        if(props.type == 'card') {
-          return (<OutlinedCard />)
-        }
-      } 
-    }
-  );
-}*/
+function FormatType(props) {
+  if(props.type === 'card') {
+    return (
+      <OutlinedCard setData={props.setData} key={props.key} header={props.header} body={props.query} id={props.id}/>
+    )
+  } else {
+    return (
+      <Paper/>
+    )
+  }
+}
 
 export default function App() { 
   const [query, setQuery] = useState('');
@@ -192,7 +193,7 @@ export default function App() {
       </Box>
       {content.map((row, index) => {
         if(index == 0) {
-          return (<OutlinedCard setData={setData} key={index} header={row.query} body={row.query} id={row._id}/>)
+          return (<FormatType type={row.type} setData={setData} key={index} header={row.query} body={row.query} id={row._id}/>)
         } else {
           return (<OutlinedCard setData={setData} key={index} header={row.query} body={row.query} id={row._id}/>);
         }
