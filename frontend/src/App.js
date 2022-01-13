@@ -102,7 +102,7 @@ function OutlinedCard(props) {
 function FormatType(props) {
   if(props.type === 'card') {
     return (
-      <OutlinedCard setData={props.setData} key={props.key} header={props.header} body={props.query} id={props.id}/>
+      <OutlinedCard setData={props.setData} key={props.key} header={props.header} body={props.body} id={props.id}/>
     )
   } else {
     return (
