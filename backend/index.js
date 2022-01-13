@@ -45,7 +45,7 @@ async function selectData() {
   rows.unshift({
     'query': 'First Blood',
     'created_at':'2022-01-01T10:19:47.959Z',
-    '_id':'f8d1dca891a29a1da1fb6f77'
+    '_id':'f8d1dca891a29a1da1fb6f77',
     'type': 'card'
   })
   return rows;
